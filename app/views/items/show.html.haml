@@ -6,14 +6,14 @@
         .item__photo
           %ul
             %li
-              %img{src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
+              = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
               %ul
                 %li
-                  %img{width: "75", height: "75", src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
                 %li
-                  %img{width: "75", height: "75", src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"}
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
                 %li 
-                  %img{width: "75", height: "75", src: "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"}
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
         .item__price
           %span.item__price__main ￥8800
           .item__price__detail
@@ -28,15 +28,15 @@
             %tr 
               %th カテゴリー
               %td
-                %a{href: "#"} メンズ  
+                = link_to "メンズ", "#" 
                 %br
-                %a{href: "#"} バッグ
+                = link_to "バッグ", "#" 
                 %br
-                %a{href: "#"} リュック/バックパック
+                = link_to "リュック", "#" 
             %tr 
               %th ブランド
               %td  
-                %a{href: "#"} プラダ
+                = link_to "プラダ", "#"
             %tr 
               %th 商品のサイズ
               %td 
@@ -49,18 +49,20 @@
             %tr 
               %th 配送元地域
               %td 
-                %a{href: "#"} 愛知県
+                = link_to "愛知県", "#"
             %tr 
               %th 発送日の目安
               %td 1~2日で発送
         .optionalArea
           %ul.star__btn
             %li.star__btn__detail
-              %i.fa.fa-star お気に入り 0
+              %i.fa.fa-star 
+              お気に入り 0
           %ul.flag__btn
             %li.flag__btn__detail
-              %a{href: "#"}
-                %i.fa.fa-flag 不適切な商品の通報
+              = link_to "#" do
+                %i.fa.fa-flag
+                不適切な商品の通報
       .item__show__main__content__comment
         .comment__content
           
@@ -75,12 +77,12 @@
             %i.fa.fa-comment コメントする
     %ul.item__show__main__links
       %li
-        %a{href: "#"}
+        = link_to "#" do
           %i.fa.fa-angle-left
           %span 前の商品
       %li
-        %a{href: "#"}
+        = link_to "#" do
           %span 後ろの商品
           %i.fa.fa-angle-right
     .item__show__main__relatedeItems
-      %a{href: "#"} メンズをもっと見る
+      = link_to "メンズをもっと見る", "#" 
