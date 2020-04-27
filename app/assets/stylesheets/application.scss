@@ -2,6 +2,12 @@
 // @import "modules/mixin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/header";
+@import "modules/footer";
+// @import "devise/new";
+// @import "devise/login";
+// @import "modules/user-show";
+@import "items/index";
 // @import "modules/header";
 @import "devise/new";
 @import "devise/login";
@@ -16,9 +22,6 @@
 body{
   background-color: rgb(245, 245, 245);
 }
-
-
-// @import "modules/footer";
 
 
 * {
