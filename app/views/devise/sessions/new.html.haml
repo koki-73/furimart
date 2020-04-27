@@ -1,0 +1,20 @@
+.login
+  .login__page
+    .login__page__new
+      %h1.login__poge__new__text アカウントをお持ちでない方はこちら
+      .login__page__new__link
+        = link_to "/users/sign_up", class: "login__page__new__link__area" do
+          .login__page__new__link__area__box
+            %h1.login__page__new__link__area__box__text 新規会員登録
+    .login__page__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login__page__form__field
+          .login__page__form__field__input
+            = f.email_field :email, autofocus: true, placeholder: "メールアドレス",class: "login__page__form__field__input__box"
+          .login__page__form__field
+            .login__page__form__field__input
+              = f.password_field :password, autocomplete: "off",placeholder: "パスワード",class: "login__page__form__field__input__box"
+          .login__page__form__actions
+            = f.submit "ログイン", class: 'btn'
+      = link_to "#",class: "login__page__form__pass" do
+        パスワードをお忘れの方
