@@ -3,7 +3,7 @@
     .login__page__new
       %h1.login__poge__new__text アカウントをお持ちでない方はこちら
       .login__page__new__link
-        = link_to "/users/sign_up", class: "login__page__new__link__area" do
+        = link_to new_user_registration_path, class: "login__page__new__link__area" do
           .login__page__new__link__area__box
             %h1.login__page__new__link__area__box__text 新規会員登録
     .login__page__form
