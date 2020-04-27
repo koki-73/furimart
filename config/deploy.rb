@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-llock '3.13.0'
+lock '3.13.0'
 
 set :application, "furimart"
 set :repo_url, "git@github.com:koki-73/furimart.git"
