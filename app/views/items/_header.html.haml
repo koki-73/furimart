@@ -1,0 +1,56 @@
+.header
+  .header__content
+    .header__content__menu
+      = link_to image_tag('logo.png',  height: '40px', width: '140px', class: 'header__content__menu__title'),root_path
+        
+      = form_with(url: "#", local: true, method: :get, class: "header__content__menu__search_form") do |form|
+        .input_box
+          = form.text_field :keyword, placeholder: "キーワードで探す", class: "input_box__form"
+          %button{type: "submit",class: 'search_btn'}
+            = image_tag 'icon-search 1.png',size: "20x20"
+            
+
+    .header__content__bottom
+      .left_lists
+        = image_tag('icon_category.png', height: '20px', width: '20px', class: 'category')
+        = link_to "カテゴリーから探す", '#', class: 'category_title'
+        -# %ul
+        -#   %li.category_box__category_parent
+        -#     = link_to "レディース", category_path(1)
+        -#     %ul
+        -#       -# = render partial: "header_child", collection: @category_children1, as: "category"
+        -#   %li.category_box__category_parent
+        -#     = link_to " メンズ", category_path(198)
+        -#   %li.category_box__category_parent
+        -#     = link_to "ベビー・キッズ", category_path(343)
+        -#   %li.category_box__category_parent
+        -#     = link_to "インテリア・住まい・小物", category_path(id: 476)
+        -#   %li.category_box__category_parent
+        -#     = link_to "本・音楽・ゲーム", category_path(id: 618)
+        -#   %li.category_box__category_parent
+        -#     = link_to "おもちゃ・ホビー・グッズ", category_path(id: 677)
+        -#   %li.category_box__category_parent
+        -#     = link_to "コスメ・香水・美容", category_path(id: 790)
+        -#   %li.category_box__category_parent
+        -#     = link_to "家電・スマホ・カメラ", category_path(id: 888)
+        -#   %li.category_box__category_parent
+        -#     = link_to "スポーツ・レジャー", category_path(id: 974)
+        -#   %li.category_box__category_parent
+        -#     = link_to "ハンドメイド", category_path(id: 1082)
+        -#   %li.category_box__category_parent
+        -#     = link_to "チケット", category_path(id: 1132)
+        -#   %li.category_box__category_parent
+        -#     = link_to "自動車・オートバイ", category_path(id: 1191)
+        -#   %li.category_box__category_parent
+        -#     = link_to "その他", category_path(id: 1253)
+        = image_tag('icon_brand.png',height: '20px', width: '20px', class: 'brand')
+        = link_to "ブランドから探す", '#',class: 'brand_title'
+      .right_lists
+        -# - if user_signed_in?
+        -#   .user_box__on
+        -#     = link_to "ログアウト", destroy_user_session_path, method: :delete,class: 'header__btn__all'
+        -#     = link_to  "投稿する", new_post_path, class: "header__btn__post",class: 'header__btn__all'
+        -# - else
+        .user_btn
+          = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
+          = link_to "ログイン", '/users/sign_in', class: 'login_btn'
