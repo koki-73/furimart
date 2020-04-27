@@ -1,5 +1,5 @@
 @import "reset";
-@import "modules/mixin";
+// @import "modules/mixin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/header";
@@ -8,18 +8,19 @@
 // @import "devise/login";
 // @import "modules/user-show";
 @import "items/index";
+// @import "modules/header";
+@import "devise/new";
+// @import "devise/login";
+// @import "modules/user-show";
+// @import "items/index";
 // @import "modules/mypage-index";
 // @import "items/show";
 // @import "category/category-header";
 // @import "brand/brand-header";
 // @import "brands/index";
 
-html{
-  height: 100%;
-}
 body{
   background-color: rgb(245, 245, 245);
-  height: 100%;
 }
 
 

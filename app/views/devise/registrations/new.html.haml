@@ -1,0 +1,99 @@
+.reg
+  .reg__page
+    %h2.reg__page__title 会員情報入力
+    .reg__page__form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .reg__page__form__list
+          .field
+            .field__label
+              %h5.field__label__text ニックネーム
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input
+              = f.text_field :email, autofocus: true, placeholder: "例)テック太郎", class: "field__input__box"
+              -# :emailを:nicknameに変更
+          .field
+            .field__label
+              %h5.field__label__text メールアドレス
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input
+              = f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "field__input__box"
+          .field
+            .field__label
+              %h5.field__label__text パスワード
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input
+              = f.password_field :password, autocomplete: "off", placeholder: "8文字以上の半角英数字", class: "field__input__box"
+          .field
+            .field__label
+              %h5.field__label__text パスワード確認
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "上のパスワードと同じものを入力してください", class: "field__input__box"
+          .identification
+            .identification__title
+              %h3 本人確認
+            .identification__text
+              %h5 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .field
+            .field__label
+              %h5.field__label__text お名前(全角)
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input-twins
+              .field__input-twins__left
+                = f.email_field :email, placeholder: "例) 技術", class: "field__input-twins__left__box"
+                -# 保存先family_name
+              .field__input-twins__right
+                = f.email_field :email, placeholder: "例) 名人", class: "field__input-twins__right__box"
+                -# 保存先first_name
+          .field
+            .field__label
+              %h5.field__label__text お名前カナ(全角)
+              .required-icon
+                %h6.required-icon__text 必須
+            .field__input-twins
+              .field__input-twins__left
+                = f.email_field :email, placeholder: "例) テック", class: "field__input-twins__left__box"
+                -# 保存先family_name_kana
+              .field__input-twins__right
+                = f.email_field :email, placeholder: "例) エキスパート", class: "field__input-twins__right__box"
+                -# 保存先first_name_kana
+            .field__label
+              %h5.field__label__text 生年月日
+              .required-icon
+                %h6.required-icon__text 必須
+            .birthday-wrap
+              .birthday-wrap__select-year
+                %select.birthday-wrap__select-year__box
+                  %option
+                    選択
+                  - for num in 1900..2020 do
+                    %option{value: num}
+                      = num
+              %h2.birthday-wrap__text
+                年
+              .birthday-wrap__select-month
+                %select.birthday-wrap__select-month__box
+                  %option
+                    選択
+                  - for num in 1..12 do
+                    %option{value: num}
+                      = num
+              %h2.birthday-wrap__text
+                月
+              .birthday-wrap__select-day
+                %select.birthday-wrap__select-day__box
+                  %option
+                    選択
+                  - for num in 1..31 do
+                    %option{value: num}
+                      = num
+              %h2.birthday-wrap__text
+                日
+          .actions
+            = f.submit "登録する", class: 'btn'
