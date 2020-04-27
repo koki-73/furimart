@@ -1,13 +1,13 @@
-%div.footer_banner
-  %div.inner
+.footer_banner
+  .inner
     %h2 だれでもかんたん、人生を変えるフリマアプリ
     %p 今すぐ無料ダウンロード！
-    %div.menu1__content__btn
+    .menu1__content__btn
       = link_to "#" do
         = image_tag('google-play-badge.png', height: '80px', width: '180px')
       = link_to "#" do
         = image_tag('google-play-badge.png', height: '80px', width: '180px',class: 'image')
-%div.footer
+.footer
   %ul.footer__content
     %li.footer__content__menu
       %h2 FURIMAについて
@@ -36,6 +36,6 @@
           = link_to "FURIMAロゴ利用ガイド","#"
         %li
           = link_to "お知らせ","#"
-  %div.footer_logo
+  .footer_logo
     = link_to image_tag('logo-white.png',  height: '40px', width: '140px', class: 'header__content__menu__title'),root_path
   %p © FURIMA
