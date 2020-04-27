@@ -249,3 +249,6 @@
   }
 }
 
+.sell-btn {
+  @include sell-btn;
+}
