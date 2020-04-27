@@ -1,12 +1,26 @@
+
 @import "reset";
+// @import "modules/mixin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+// @import "modules/header";
 @import "devise/new";
-
+// @import "devise/login";
+// @import "modules/user-show";
+// @import "items/index";
+// @import "modules/mypage-index";
+// @import "items/show";
+// @import "category/category-header";
+// @import "brand/brand-header";
+// @import "brands/index";
 
 body{
   background-color: rgb(245, 245, 245);
 }
+
+
+// @import "modules/footer";
+
 
 * {
   box-sizing: border-box;
