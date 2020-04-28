@@ -28,7 +28,7 @@ Things you may want to cover:
 ## users table
 |Column|Type|Options|
 |------|----|-------|
-|nicname|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false defalt|
 |encrypted_password|string|null: false defalt|
 |family_name|string|null: false|
@@ -95,7 +95,6 @@ Things you may want to cover:
 |delivery_payer_id|reference|null: false|
 |category_id|reference|null: false|
 |user_id|reference|null: false|
-|size_id|reference| |
 |delivery_method|string|　|
 |delivery_from_location|string|　|
 |item_explanation|text|null: false|
@@ -105,6 +104,7 @@ Things you may want to cover:
 - has_many :comments, dependent: :destroy
 - has_many :likes
 - has_many :item_images, dependent: :destroy
+- has_many :user_rates
 - belongs_to :category
 - belongs_to :size
 - belongs_to :brand
@@ -123,7 +123,7 @@ Things you may want to cover:
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
-|comments|text|null: false|
+|comment|text|null: false|
 |user_id|reference|null: false|
 |item_id|reference|null: false|
 
