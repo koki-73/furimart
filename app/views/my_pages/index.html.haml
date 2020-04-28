@@ -1,0 +1,126 @@
+.mypage-container.clearfix
+  .mypage-main-content
+    %section.mypage-user-icon
+      = link_to "#" do
+        .mypage-user-photo
+          = image_tag('member_photo_noimage_thumb.png',  height: '60px', width: '60px')
+        %h2.user-name name
+        .mypage-score
+          %span
+            = "評価  ##"
+          %span
+            = "出品数  ##"
+    %section.mypage-tab-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            = link_to "お知らせ", "#"
+        %li
+          %h3
+            = link_to "やることリスト", "#"
+      .tab-content
+        %ul.mypage-tab-notification.tab-pane.active
+          %li
+            = link_to "#" do
+              %figure
+                = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+              .mypage-item-body
+                .message-item
+                  = "事務局からおしらせがあります"
+                .message-time-before
+                  = icon('far', 'clock', class: "clock-icon")
+                  %span 1時間前
+              = icon('fas', 'chevron-right', class: "arrow-icon")
+          %li
+            = link_to "#" do
+              %figure
+                = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+              .mypage-item-body
+                .message-item
+                  = "事務局からおしらせがあります"
+                .message-time-before
+                  = icon('far', 'clock', class: "clock-icon")
+                  %span 1時間前
+              = icon('fas', 'chevron-right', class: "arrow-icon")
+          %li.mypage-go-list
+            = link_to "一覧を見る", "#"
+              
+    %section.mypage-tab-items
+      %h2.mypage-tab-head
+        購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            = link_to "取引中", "#"
+        %li
+          %h3
+            = link_to "過去の取引", "#"
+      .tab-content
+        %ul.mypage-tab-notification.tab-pane.active
+          %li
+            = link_to "#" do
+              %figure
+                = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+              .mypage-item-body
+                .message-item
+                  = "事務局からおしらせがあります"
+                .message-time-before
+                  = icon('far', 'clock', class: "clock-icon")
+                  %span 1時間前
+              = icon('fas', 'chevron-right', class: "arrow-icon")
+          %li
+            = link_to "#" do
+              %figure
+                = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+              .mypage-item-body
+                .message-item
+                  = "事務局からおしらせがあります"
+                .message-time-before
+                  = icon('far', 'clock', class: "clock-icon")
+                  %span 1時間前
+              = icon('fas', 'chevron-right', class: "arrow-icon")
+          %li.mypage-go-list
+            = link_to "一覧を見る", "#"
+  
+  .mypage-side-bar
+    %nav.mypage-nav
+      %ul.mypage-nav-list
+        %li
+          = link_to "#", class: "list-item-head" do
+            マイページ
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        %li 
+          = link_to "#", class: "list-item" do
+            お知らせ
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        %li
+          = link_to "#", class: "list-item" do
+            やることリスト
+            = icon('fas', 'chevron-right', class: "arrow-icon") 
+        %li
+          = link_to "#", class: "list-item" do
+            いいね一覧
+            = icon('fas', 'chevron-right', class: "arrow-icon") 
+        %li
+          = link_to "#", class: "list-item" do
+            出品する
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        %h3.mypage-nav-head
+          設定
+      %ul.mypage-nav-list
+        %li
+          = link_to "#", class: "list-item" do
+            プロフィール
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        %li
+          = link_to "#", class: "list-item" do
+            発送元・お届け先住所変更
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        %li
+          = link_to "#", class: "list-item" do
+            支払い方法
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+
+= link_to "#", class: "sell-btn" do
+  %div 出品する
+  = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"

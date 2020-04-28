@@ -1,0 +1,176 @@
+.clearfix::after {
+  content: "";
+      clear: both;
+      display: block;
+}
+
+.mypage-container {
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  background-color: rgb(245, 245, 245);
+}
+@media only screen and (max-width: 1019px) {
+  .mypage-container {
+    width: 700px;
+    margin: 24px auto 0;
+    .mypage-main-content {
+      margin: 0 auto;
+    }
+    .mypage-side-bar {
+      width: 700px;
+      margin: 40px auto 0;
+    }
+  }
+}
+@media only screen and (min-width: 1020px) {
+  .mypage-container {
+    width: 1020px;
+    margin: 40px auto 0;
+    .mypage-main-content {
+      float: right;
+    }
+    .mypage-side-bar {
+      width: 280px;
+      margin: 0 40px 0 0;
+      float: left;
+    }
+  }
+}
+.mypage-main-content {
+  width: 700px;
+  section.mypage-user-icon {
+    height: 200px;
+    text-align: center;
+    background-image: url("background_sample2.jpg");
+    background-size: cover;
+    position: relative;
+    color: #333;
+    a {
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 30%;
+      text-decoration: none;
+      color: #333;
+    }
+    .mypage-user-photo {
+      margin: 0 auto;
+    }
+    span {
+      margin-right: 10px;
+    }
+    h2.user-name {
+      margin-top: 8px;
+    }
+  }
+  section.mypage-tab-notification-todo {
+    background-color: #fff;
+  }
+}
+section.mypage-tab-items {
+  margin: 40px 0 0;
+  background: #fff;
+  h2.mypage-tab-head {
+    padding: 0 16px;
+    line-height: 72px;
+    background: #fafafa;
+  }
+}
+ul.mypage-tabs {
+  height: 72px;
+  background: #eee;
+  display: flex;
+  text-align: center;
+  line-height: 72px;
+  li {
+    width: 50%;
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+  }
+  li.active {
+    background: #fff;
+    border-top: 2px solid #ea352d;
+  }
+}
+ul.mypage-tab-notification.tab-pane.active {
+  li {
+    a {
+      display: block;
+      padding: 16px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      display: flex;
+      position: relative;
+      figure {
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        position: relative;
+        img {
+          position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+      }
+      .mypage-item-body {
+        margin: 0 15px;
+      }
+      .arrow-icon{
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        right: 16px;
+      }
+    }
+  }
+  li.mypage-go-list {
+    padding: 16px;
+    a {
+      display: block;
+      padding: 0;
+      background: #eee;
+      color: #333;
+      line-height: 56px;
+      text-align: center;
+    }
+  }
+}
+.mypage-side-bar {
+  nav.mypage-nav {
+    ul.mypage-nav-list {
+      li {
+        justify-content: space-between;
+        a {
+          display: block;
+          width: 100%;
+          min-height: 48px;
+          padding: 16px;
+          font-size: 14px;
+          text-decoration: none;
+          color: #333;
+          background: #fff;
+          border-top: 1px solid #eee;
+          position: relative;
+          .arrow-icon{
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            right: 16px;
+          }
+        }
+        a.list-item-head {
+          font-weight: 600;
+          background-color: #eeeeee;
+        }
+      } 
+      h3 {
+        margin: 40px 0 8px;
+      }
+    }
+  }
+}

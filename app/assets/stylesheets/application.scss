@@ -13,8 +13,8 @@
 @import "devise/login";
 // @import "modules/user-show";
 // @import "items/index";
-// @import "modules/mypage-index";
- @import "items/show";
+@import "modules/mypage-index";
+@import "items/show";
 // @import "category/category-header";
 // @import "brand/brand-header";
 // @import "brands/index";
@@ -22,7 +22,6 @@
 body{
   background-color: rgb(245, 245, 245);
 }
-
 
 * {
   box-sizing: border-box;
