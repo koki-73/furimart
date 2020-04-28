@@ -81,6 +81,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to :item
 
 
 ## items table
@@ -160,7 +161,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
-|item_id|reference|null: false|
+
 
 ### Association
 - has_many :items
