@@ -18,7 +18,7 @@
       .right_lists
         - if user_signed_in?
           .user_btn
-            = link_to "ログアウト", '/users/sign_out', class: 'login_btn'
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'login_btn'
         - else
           .user_btn
             = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
