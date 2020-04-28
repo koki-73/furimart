@@ -82,31 +82,17 @@
   background-color: #ea352d;
   color: white;
 }
-.birthday-wrap{
-  display: flex;
-  &__text{
-    line-height: 40px;
-    padding-left: 3px;
-  }
-  &__select-year{
-    height: 40px;
-    &__box{
-      height: 100%;
-      width: 100px;
-    }
-  }
-  &__select-month{
-    height: 40px;
-    &__box{
-      height: 100%;
-      width: 100px;
-    }
-  }
-  &__select-day{
-    height: 40px;
-    &__box{
-      height: 100%;
-      width: 100px;
-    }
-  }
+.year{
+  height: 30px;
+  width: 100px;
+}
+.month{
+  height: 30px;
+  width: 60px;
+  margin-left: 10px;
+}
+.day{
+  height: 30px;
+  width: 60px;
+  margin-left: 10px;
 }
