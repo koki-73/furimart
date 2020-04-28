@@ -16,6 +16,10 @@
         = image_tag('icon_brand.png',height: '20px', width: '20px', class: 'brand')
         = link_to "ブランドから探す", '#',class: 'brand_title'
       .right_lists
-        .user_btn
-          = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
-          = link_to "ログイン", '/users/sign_in', class: 'login_btn'
+        - if user_signed_in?
+          .user_btn
+            = link_to "ログアウト", '/users/sign_out', class: 'login_btn'
+        - else
+          .user_btn
+            = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
+            = link_to "ログイン", '/users/sign_in', class: 'login_btn'
