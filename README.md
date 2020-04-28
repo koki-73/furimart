@@ -44,9 +44,8 @@ Things you may want to cover:
 - has_many :items, dependent: :destroy
 - has_many :likes
 - has_many :user_rates
-- has_many :buyer_items, foreign_key: "buyer_id", class_name: "items"
 - has_one :profile, dependent: :destroy
-- has_one :card, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
 
 ## profiles table
 |Column|Type|Options|
@@ -95,8 +94,8 @@ Things you may want to cover:
 |delivery_payer_id|reference|null: false|
 |category_id|reference|null: false|
 |user_id|reference|null: false|
-|delivery_method|string|　|
-|delivery_from_location|string|　|
+|delivery_method|string|null: false|
+|delivery_from_location|string|null: false|
 |item_explanation|text|null: false|
 |preparation_day|integer|null: false|
 
