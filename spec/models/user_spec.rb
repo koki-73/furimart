@@ -54,6 +54,12 @@ describe User do
       user.valid?
       expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
     end
+
+    it " passwordが129文字以上であれば登録できないこと " do
+      user = build(:user, password: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", password_confirmation: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
+      user.valid?
+      expect(user.errors[:password]).to include("is too long (maximum is 128 characters)")
+    end
     
     it "family_nameがない場合は登録できないこと" do
       user = build(:user, family_name: "")
