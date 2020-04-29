@@ -1,0 +1,25 @@
+.footer2{
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+  a{
+    color: #333;
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 16px 0 0;
+  }
+  .footer__logo{
+    margin-top: 30px;
+  }
+  img{
+    width: 140px;
+    height: 40px;
+    &:hover{
+      opacity: 0.7; 
+    }
+  }
+  p{
+    font-size: 13px;;
+  }
+}

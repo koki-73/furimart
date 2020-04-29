@@ -4,6 +4,8 @@
 @import "font-awesome";
 @import "modules/header";
 @import "modules/footer";
+@import "modules/header2";
+@import "modules/footer2";
 // @import "devise/new";
 // @import "devise/login";
 // @import "modules/user-show";
@@ -18,6 +20,8 @@
 // @import "category/category-header";
 // @import "brand/brand-header";
 // @import "brands/index";
+
+@import "purchases/new";
 
 body{
   background-color: rgb(245, 245, 245);

@@ -1,0 +1,114 @@
+.purchase__detail{
+  &__main{
+    .detail__main__content{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      @media only screen and (min-width:651px) {
+        .purchase__name{
+          font-size: 22px;
+          padding: 16px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      @media only screen and (min-width:961px) {
+        .purchase__name{
+          font-size: 22px;
+          padding: 32px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      .buy__content{
+        padding: 24px 16px;
+        border-top: 1px solid #f5f5f5;
+        text-align: center;
+        &__item{
+          max-width: 343px;
+          margin: 0 auto;
+          .buy__item__box{
+            display: flex;
+            justify-content: center;
+            &__image{
+              height: 80px;
+              width: 80px;
+              img{
+                width: auto;
+                max-height: 80px;
+              }
+            }
+            &__detail{
+              margin-left: 16px;
+              .buy__name{
+                font-size: 14px;
+                padding: 0 0 8px;
+                line-height: 1.5;
+                text-align: left;
+              }
+              .buy__price{
+                text-align: left;
+                font-size: 12px;
+                font-weight: bold;
+                .buy__fee{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          .buy__form{
+            padding-bottom: 35px;
+            .buy__price__table{
+              padding-bottom: 24px;
+              border-bottom: 1px solid #f5f5f5;
+              font-size: 18px;
+              display: flex;
+              justify-content: space-between;
+              font-weight: bold;
+            }
+            .buy__method{
+              width: 343px;
+              border-bottom: 1px solid #f5f5f5;
+              padding: 24px 0;
+              h2{
+                font-size: 14px;
+                text-align: left;
+                font-weight: bold;
+              }
+            }
+            .buy__shipping{
+              width: 343px;
+              border-bottom: 1px solid #f5f5f5;
+              padding: 24px 0;
+              h3{
+                font-size: 14px;
+                text-align: left;
+                font-weight: bold;
+              }
+            }
+            .buy__user__info__text{
+              text-align: left;
+              margin: 8px 0 0;
+              font-size: 14px;
+              color: #0099e8;
+              span{
+                margin: 0 0 0 4px;
+              }
+            }
+            .buyBtn{
+              margin: 24px 0;
+              border: 1px solid #888;
+              background: #888;
+              color: #fff;
+              font-weight: bold;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+            }
+          }
+        }    
+      }
+    }          
+  }
+}
+  
