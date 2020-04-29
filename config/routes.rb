@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :items, only: :show
   resources :categories, only: :show
   resources :brands, only: :index
+  resources :credit_cards, only: [:index, :new, :create, :destroy]
 end
