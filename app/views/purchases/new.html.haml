@@ -1,0 +1,35 @@
+.purchase
+  .purchase__detail
+    .purchase__detail__main
+      .detail__main__content
+        %h1.purchase__name 購入内容の確認
+        .buy__content
+          .buy__content__item
+            .buy__item__box
+              .buy__item__box__image
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+              .buy__item__box__detail
+                %p.buy__name プラダ リュック レッド
+                %p.buy__price
+                  %span ¥20000
+                  %span.buy__fee （税込）送料込み
+        .buy__content
+          .buy__content__item
+            %form.buy__form
+              .buy__price__table
+                .buy__price__label 支払い金額
+                .buy__price__cell　¥20000
+              .buy__method
+                %h2 支払い方法
+                = link_to "#" do
+                  %p.buy__user__info__text
+                    %i.far.fa-plus-square
+                      %span 登録してください
+              .buy__shipping
+                %h3 配送先
+                = link_to "#" do
+                  %p.buy__user__info__text
+                    %i.far.fa-plus-square
+                      %span 登録してください
+              %button.buyBtn{type: "submit"} 購入する
+    
