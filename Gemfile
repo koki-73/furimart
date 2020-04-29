@@ -75,6 +75,7 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'payjp'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'
