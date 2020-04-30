@@ -4,7 +4,7 @@
   .menu1{
     width: 100vw;
     height: 560px;
-    background-image: url(bg-mainVisual-pict_pc.jpg);
+    background-image: image-url("bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -105,7 +105,7 @@
     }
   }
   .menu3{
-    background-image: url(bg-topMiddleDl-pict.jpg);
+    background-image: image-url("bg-topMiddleDl-pict.jpg");
     background-position: bottom right;
     height: 400px;
     background-size: cover;
