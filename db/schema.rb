@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_04_28_144152) do
+ActiveRecord::Schema.define(version: 2020_05_01_003005) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -19,18 +18,16 @@ ActiveRecord::Schema.define(version: 2020_04_28_144152) do
     t.datetime "updated_at", null: false
   end
 
-ActiveRecord::Schema.define(version: 2020_04_27_115652) do
-
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comement", null: false
+    t.text "content", null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -114,9 +111,6 @@ ActiveRecord::Schema.define(version: 2020_04_27_115652) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_user_rates_on_item_id"
     t.index ["user_id"], name: "index_user_rates_on_user_id"
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
-
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
