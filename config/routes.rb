@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :items, only: :show
   resources :categories, only: :show
   resources :brands, only: :index
-  resources :credit_cards, only: [:index, :new, :show] do
+  resources :credit_cards, only: :new do
     collection do
-      post 'show', to: 'credit_cards#show'
       post 'pay', to: 'credit_cards#pay'
-      post 'delete', to: 'credit_cards#delete'
+      delete 'delete', to: 'credit_cards#delete'
+      get 'show', to: 'credit_cards#show'
     end
   end
 end

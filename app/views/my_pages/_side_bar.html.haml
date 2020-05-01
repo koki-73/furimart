@@ -2,7 +2,7 @@
   %nav.mypage-nav
     %ul.mypage-nav-list
       %li
-        = link_to "#", class: "list-item-head" do
+        = link_to my_pages_path, class: "list-item-head" do
           マイページ
           = icon('fas', 'chevron-right', class: "arrow-icon")
       %li 
@@ -33,11 +33,6 @@
           発送元・お届け先住所変更
           = icon('fas', 'chevron-right', class: "arrow-icon")
       %li
-        - if card
-          = link_to credit_card_path(card.id), class: "list-item" do
-            支払い方法
-            = icon('fas', 'chevron-right', class: "arrow-icon")
-        - else
-          = link_to new_credit_card_path, class: "list-item" do
-            支払い方法
-            = icon('fas', 'chevron-right', class: "arrow-icon")
+        = link_to credit_cards_path, class: "list-item" do
+          支払い方法
+          = icon('fas', 'chevron-right', class: "arrow-icon")
