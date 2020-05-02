@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # resources :items, only: [:show, :new, :create] 
   resources :categories, only: :show
   resources :brands, only: :index
+  resources :purchases, only: [:new, :create]
 end
