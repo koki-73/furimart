@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    comment.user = current_user
-    if comment.save
-      redirect_to item_path(comment.item.id)
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to item_path(@comment.item.id)
+    else
+      @item = Item.find(@comment.item.id)
+      @comments = @item.comments.includes(:user)
+      render template: "items/show"
     end
   end
 
