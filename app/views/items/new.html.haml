@@ -1,0 +1,150 @@
+.items-new
+  .items-new__page
+    .items-new__page__image
+      .items-new__page__image__title
+        %h5.items-new__page__image__title__text
+          出品画像
+        .items-new__page__image__title__required
+          %h6.items-new__page__image__title__required__text
+            必須
+      .items-new__page__image__uploader
+        %h3.items-new__page__image__uploader__text
+          最大10枚までアップロードできます
+      .items-new__page__image__uploader__form
+        複数枚投稿できるフォームの作成をします
+    .items-new__page__main
+      = form_for @item do |form|
+        .items-new__page__main__name
+          .items-new__page__main__name__texts
+            %h5.items-new__page__main__name__texts__text
+              商品名
+            .items-new__page__main__name__texts__required
+              %h6.items-new__page__main__name__texts__required__text
+                必須
+          .items-new__page__main__name__form
+            = form.text_field :name, placeholder: "40文字まで", class: "items-new__page__main__name__form__bar"
+        .items-new__page__main__explanation
+          .items-new__page__main__explanation__texts
+            %h5.items-new__page__main__explanation__texts__text
+              商品説明
+            .items-new__page__main__explanation__texts__required
+              %h6.items-new__page__main__explanation__texts__required__text
+                必須
+          .items-new__page__main__explanation__form
+            = form.text_area :name, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年頃に一万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "items-new__page__main__name__form__bar"
+          .item_new_reite
+            %span 0/1000
+          .item_new_reite1
+            入力してください
+        .item_new_category
+          .item_new_category__show
+            .item_new_category__show1
+              商品の詳細
+              .listing-form-box
+                .listing-product-detail__category
+                  = form.label 'カテゴリー', class: 'listing-default__label'
+                  %span.listing-default--require 必須
+                  .listing-select-wrapper
+                    .listing-select-wrapper__box
+                      .listing-select-wrapper__box--select
+                        -# = form.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                        = form.collection_select :category_id, @category_parent_array, :id, :name, prompt: "---"
+                        -# = form.select :category_id, [@category_parent_array_name, @category_parent_array_id ], prompt:  "選択してください"
+        .item_new_brand
+          .item_new_brand__show
+            .item_new_brand__show1
+              .item_new_brand__show1__2
+                %h7
+                  ブランド
+                .item_new_brand__show1__2__3
+                  %h8
+                    任意
+              .item_new_brand_text
+                = form.text_field :name, placeholder: "例）シャネル", class: "item_new_brand_text_bar"
+              
+        .item_new_status
+          .item_new_status__show
+            .item_new_status__show1
+              .item_new_status__show1__2
+                %h7
+                  商品の状態
+                .item_new_status__show1__2__3
+                  %h8
+                    必須
+              .item_new_brand_tex
+                %select
+                  %option{:value => ""} ---選択してください---
+                  %option{:value => "0"} 新品・未使用
+                  %option{:value => "1"} 未使用に近い
+                  %option{:value => "2"} 目立った傷や汚れなし
+                  %option{:value => "3"} やや傷や汚れあり
+
+    .items_delivery
+      .item_delivery__name
+        .item_new_status11
+          .item_new_status__show1
+            .item_new_status__show1__show11
+              配送について
+              .item_new_status__show1__2
+                %h7
+                  配送の負担
+                .item_new_status__show1__2__3
+                  %h8
+                    必須
+              .item_new_brand_tex
+                %select
+                  %option{:value => ""} ---選択してください---
+                  %option{:value => "0"} 送料込み
+                  %option{:value => "1"} 着払い
+
+              .item_new_status__show1__2
+                %h7
+                  配送元の地域
+                .item_new_status__show1__2__3
+                  %h8
+                    必須
+              .item_new_brand_tex
+                %select
+                  %option{:value => ""} ---選択してください---
+                  %option{:value => "0"} 都道府県
+
+              .item_new_status__show1__2
+                %h7
+                  発送までの日数
+                .item_new_status__show1__2__3
+                  %h8
+                    必須
+              .item_new_brand_tex
+                %select
+                  %option{:value => ""} ---選択してください---
+                  %option{:value => "0"} 1〜2日で発送
+    .items_price
+      .item_delivery__name
+        .item_new_status11
+          .item_new_status__show1
+            .item_new_status__show1__show11
+              価格（¥300〜9,999,999）
+              .item_new_status__show1__2
+                %h7
+                  販売価格
+                .item_new_status__show1__2__3
+                  %h8
+                    必須
+              .item_new_status__show1__22
+                販売手数料（10%）
+      .item_price__a
+        販売利益 
+        .item_price__a__b
+          %input#submit_button1{:name => "submit", :type => "submit", :value => "出品"}/
+        
+        .item_price__a__c  
+          %input#submit_button1{:name => "submit", :type => "submit", :value => "下書き"}/
+        .item_price__a__d
+          もどる
+
+
+
+
+
+ 
+
