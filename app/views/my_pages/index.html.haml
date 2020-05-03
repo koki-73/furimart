@@ -82,7 +82,7 @@
           %li.mypage-go-list
             = link_to "一覧を見る", "#"
   
-  = render partial: 'side_bar'
+  = render partial: 'side_bar', locals: {card: @card}
 
 = link_to "#", class: "sell-btn" do
   %div 出品する

@@ -33,6 +33,11 @@
           発送元・お届け先住所変更
           = icon('fas', 'chevron-right', class: "arrow-icon")
       %li
-        = link_to credit_cards_show_path, class: "list-item" do
-          支払い方法
-          = icon('fas', 'chevron-right', class: "arrow-icon")
+        - if card
+          = link_to credit_card_path(card.id), class: "list-item" do
+            支払い方法
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        - else
+          = link_to new_credit_card_path, class: "list-item" do
+            支払い方法
+            = icon('fas', 'chevron-right', class: "arrow-icon")
