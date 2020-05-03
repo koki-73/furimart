@@ -3,16 +3,23 @@
   padding: 40px 0;
   text-align: center;
   position: relative;
-  ul {
-    display: flex;
-    position: absolute;
-    left: 200px;
-
-    span {
-      margin-left: 15px;
+  @media only screen and (min-width:651px) {
+    ul {
+      display: flex;
+      position: absolute;
+      left: 140px;
+    } 
+  }
+  @media only screen and (min-width:961px) {
+    ul {
+      display: flex;
+      position: absolute;
+      left: 510px;
     }
   }
-  
+  li {
+    margin-left: 15px;
+  }
   a {
     color: #333;
     font-size: 12px;
