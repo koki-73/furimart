@@ -31,7 +31,7 @@ $(function () {
     $('.listing-product-detail__category').append(grandchildSelectHtml);
   }
   $('#item_category_id').on('change', function () {
-    var parentCategory = document.getElementById('item_category_id').value; /
+    var parentCategory = document.getElementById('item_category_id').value;
     if (parentCategory != "") {
       $.ajax({
         url: '/items/get_category_children',
