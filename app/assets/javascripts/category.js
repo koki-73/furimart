@@ -30,7 +30,6 @@ $(function () {
                             </div>`;
     $('.listing-product-detail__category').append(grandchildSelectHtml);
   }
-
   $('#item_category_id').on('change', function () {
     var parentCategory = document.getElementById('item_category_id').value; /
     if (parentCategory != "") {
@@ -55,7 +54,7 @@ $(function () {
           alert('カテゴリー取得に失敗しました');
         })
     } else {
-      $('#children_wrapper').remove(); //
+      $('#children_wrapper').remove();
       $('#grandchildren_wrapper').remove();
       $('#size_wrapper').remove();
       $('#brand_wrapper').remove();
