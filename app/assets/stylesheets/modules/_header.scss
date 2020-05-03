@@ -50,6 +50,7 @@
           font-size: 14px;
           color: black;
           margin-right: 10px;
+          padding-bottom: 3px;
         }
         .brand_title{
           text-decoration: none;
@@ -89,5 +90,87 @@
         }
       }
     }
+  }
+}
+.category-box{
+  z-index: 1;
+  width: 200px;
+  background-color: white;
+  display: none;
+  &__category-parent{
+    &__link{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      display: block;
+      height: 40px;
+      padding-left: 5px;
+      line-height: 40px;
+    }
+  }
+}
+#category-parent-1{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-2{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-3{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-4{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-5{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-6{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-7{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-8{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-9{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-10{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-11{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-12{
+  :hover{
+    background-color: #3CCACE;
+  }
+}
+#category-parent-13{
+  :hover{
+    background-color: #3CCACE;
   }
 }
