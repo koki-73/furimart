@@ -1,0 +1,38 @@
+.mypage-side-bar
+  %nav.mypage-nav
+    %ul.mypage-nav-list
+      %li
+        = link_to my_pages_path, class: "list-item-head" do
+          マイページ
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li 
+        = link_to "#", class: "list-item" do
+          お知らせ
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li
+        = link_to "#", class: "list-item" do
+          やることリスト
+          = icon('fas', 'chevron-right', class: "arrow-icon") 
+      %li
+        = link_to "#", class: "list-item" do
+          いいね一覧
+          = icon('fas', 'chevron-right', class: "arrow-icon") 
+      %li
+        = link_to "#", class: "list-item" do
+          出品する
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %h3.mypage-nav-head
+        設定
+    %ul.mypage-nav-list
+      %li
+        = link_to "#", class: "list-item" do
+          プロフィール
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li
+        = link_to "#", class: "list-item" do
+          発送元・お届け先住所変更
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li
+        = link_to credit_cards_path, class: "list-item" do
+          支払い方法
+          = icon('fas', 'chevron-right', class: "arrow-icon")
