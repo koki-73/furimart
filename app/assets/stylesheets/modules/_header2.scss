@@ -1,0 +1,26 @@
+.header2{
+  text-align: center;
+  a{
+    margin: 0 8px 0 0;
+    display: inline-block;
+    line-height: 33px;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+  @media only screen and (min-width:651px) {
+    img{
+      width: 120px;
+      height: 33px;
+      margin-top: 11px;
+    } 
+  }
+  @media only screen and (min-width:961px) {
+    img{
+      width: 185px;
+      height: 49px;
+      margin-top: 40px;
+      margin: 40px 0 30px 0;
+    }     
+  }
+}
