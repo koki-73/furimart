@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new   
     @category_parent_array = Category.where(ancestry: nil)
-
   end
 
   def get_category_children
@@ -30,6 +29,3 @@ class ItemsController < ApplicationController
     params.permit(:child_id)
   end
 end
-
-
-

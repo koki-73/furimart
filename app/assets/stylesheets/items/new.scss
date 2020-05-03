@@ -5,21 +5,21 @@
     width: 700px;
     margin: 0 auto;
     padding: 40px;
-    .form__content__image{
+    .form__content__image {
       margin: 0 auto;
       background-color: white;
-      h5.form__title{
+      h5.form__title {
         display: inline-block;
       margin: 20px 0 10px;
       }
-      .form_box{
-        h3.form__box__image{
+      .form_box　{　
+        h3.form__box__image {
           margin-top: 10px;
           font-size: 13px;
           color: gray;
         }
       }
-      .form__box__area{
+      .form__box__area {
         margin-top: 20px;
         width: 100%;
         border: 1px solid;
@@ -49,8 +49,8 @@
       height: 200px;
       padding: 13px 16px;
     }
-    .text__count{
-      span{
+    .text__count {
+      span {
         float: right;
         font-size: 5px;
         color: silver;
@@ -110,7 +110,7 @@
       color: #888;
     }
   }
-  .form__area{
+  .form__area {
     .listing-form-box {
       margin: 0 auto;
       background-color: white;
@@ -126,7 +126,7 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    input{
+    input {
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
@@ -140,7 +140,7 @@
       text-align: right;
     }
   }
-  .profit{
+  .profit {
     margin-top: 10px;
     margin-bottom: 10px;
   }

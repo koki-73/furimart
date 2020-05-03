@@ -33,7 +33,7 @@ $(function () {
 
   $('#item_category_id').on('change', function () {
     var parentCategory = document.getElementById('item_category_id').value; /
-    if (parentCategory != "") { //
+    if (parentCategory != "") {
       $.ajax({
         url: '/items/get_category_children',
         type: 'GET',
