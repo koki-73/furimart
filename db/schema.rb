@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_28_144152) do
 
+
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_144152) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "comement", null: false
+    t.text "content", null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
