@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
+
 ActiveRecord::Schema.define(version: 2020_04_28_144152) do
-=======
 ActiveRecord::Schema.define(version: 2020_05_01_003005) do
->>>>>>> origin/comment
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
