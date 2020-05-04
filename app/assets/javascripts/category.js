@@ -73,7 +73,6 @@ $(function () {
 
   $('.listing-product-detail__category').on('change', '#child_category', function () {
     var childId = $('#child_category option:selected').data('category');
-    console.log(childId)
     if (childId != "---") {
       $.ajax({
         url: '/items/get_category_grandchildren',
