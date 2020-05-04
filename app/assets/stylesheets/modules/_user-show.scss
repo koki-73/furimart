@@ -1,0 +1,159 @@
+.users-details {
+  width: 700px;
+  // height: 100vh;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .users-detail-profile-box {
+    text-align: center;
+    padding-top: 50px;
+    background-image: image-url("background_sample2.jpg");
+    background-size: cover;
+    .users-detail-photo-box {
+      .users-detail-photo {
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      h2 {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        font-size: 18px;
+      }
+    }
+  }
+  .users-score {
+    padding-bottom: 30px;
+    font-size: 12px;
+    span {
+      margin-right: 18px;
+    }
+  }
+  .users-rate-area {
+    width: 700px;
+    height: 50px;
+    background-color: #fff;
+    padding: 14px 170px 0;
+    margin: 0 auto;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #f5f5f5;;
+    .good-icon {
+      font-size: 24px;
+      color: #ef5185;
+    }
+    .normal-icon {
+      font-size: 24px;
+      color: #fba933;
+    }
+    .bad-icon {
+      font-size: 24px;
+      color: #6ab5d8;
+    }
+    span {
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+      margin-left: 14px;
+    }
+  }
+  .users-self-introduce-area {
+    padding: 30px 50px 60px 50px;
+    white-space:pre-wrap;
+  }
+  .social-media-box {
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      margin-right: 8px;
+      .facebook-icon, .twitter-icon {
+        color: #fff;
+      }
+      .line-icon {
+        // height: 20px;
+        // width: 24px;
+        // line-height: 20px;
+        // color: #00c137;
+        // background-color: #fff;
+      }
+    }
+    a.facebook {
+      background-color: #385185;
+    }
+    a.twitter {
+      background-color: #5d9dc9;
+    }
+    a.line {
+      background-color: #00c137;
+      color: #fff;
+    }
+  }
+
+}
+
+.items-box-container {
+  background-color: #fff;
+  h2.items-box-head {
+    font-size: 22px;
+    margin: 24px 0 8px;
+  }
+  .items-box-content {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 350px);
+    grid-template-columns: 220px 220px 220px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .items-box {
+      position: relative;
+      margin-bottom: 20px;
+      a {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      &__photo {
+        width: 220px;
+        height: 220px;
+        background-color: wheat;
+      }
+      &__body {
+        padding: 16px;
+        background-color: whitesmoke;
+        h3 {
+          height: 3em;
+          word-wrap: break-word;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        .items-num {
+          margin-top: 10px;
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          .like-icon {
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sell-btn {
+  @include sell-btn;
+}
