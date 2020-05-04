@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :my_pages, only: :index
-  resources :items, only: [:show, :new, :create]
     resources :comments, only: :create
   resources :categories, only: :show
   resources :brands, only: :index
