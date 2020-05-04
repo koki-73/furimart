@@ -2,16 +2,16 @@
   .header__content
     .header__content__menu
       = link_to image_tag('logo.png',  height: '40px', width: '140px', class: 'header__content__menu__title'),root_path
-      = form_with(url: "#", local: true, method: :get, class: "header__content__menu__search-form") do |form|
-        .input-box
-          = form.text_field :keyword, placeholder: "キーワードで探す", class: "input-box__form"
-          %button{type: "submit",class: 'search-btn'}
+      = form_with(url: "#", local: true, method: :get, class: "header__content__menu__search_form") do |form|
+        .input_box
+          = form.text_field :keyword, placeholder: "キーワードで探す", class: "input_box__form"
+          %button{type: "submit",class: 'search_btn'}
             = image_tag 'icon-search 1.png',size: "20x20"
     .header__content__bottom
-      .left-lists
-        .left-lists__category
+      .left_lists
+        .left_lists__category
           = image_tag('icon_category.png', height: '20px', width: '20px', class: 'category')
-          = link_to "カテゴリーから探す", '#', class: 'category-title'
+          = link_to "カテゴリーから探す", '#', class: 'category_title'
         %ul.category-box
           %li.category-box__category-parent#category-parent-1
             = link_to "レディース", category_path(1), class: "category-box__category-parent__link"
@@ -39,17 +39,17 @@
             = link_to "自動車・オートバイ", category_path(12), class: "category-box__category-parent__link"
           %li.category-box__category-parent#category-parent-13
             = link_to "その他", category_path(13), class: "category-box__category-parent__link"
-        .left-lists__brands
+        .left_lists__brands
           = image_tag('icon_brand.png',height: '20px', width: '20px', class: 'brand')
-          = link_to "ブランドから探す", '#',class: 'brand-title'
-      .right-lists
+          = link_to "ブランドから探す", '#',class: 'brand_title'
+      .right_lists
         - if user_signed_in?
-          .user-btn
-            = link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'login-btn'
+          .user_btn
+            = link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'login_btn'
         - else
-          .user-btn
-            = link_to "新規会員登録", '/users/sign_up', class: 'sign-up-btn'
-            = link_to "ログイン", '/users/sign_in', class: 'login-btn'
+          .user_btn
+            = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
+            = link_to "ログイン", '/users/sign_in', class: 'login_btn'
     -# %ul.category-box
     -#   %li.category-box__category-parent#category-parent-1
     -#     = link_to "レディース", category_path(1), class: "category-box__category-parent__link"

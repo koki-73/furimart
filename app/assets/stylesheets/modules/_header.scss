@@ -1,33 +1,33 @@
-.header {
+.header{
   height: 120px;
   width: 100vw;
   background-color: white;
   border-bottom: solid 1px rgb(170, 169, 169);
-  &__content {
+  &__content{
     max-width: 1040px;
     margin: 0 auto;
     padding: 0 60px;
-    &__menu {
+    &__menu{
       display: flex;
       padding-top: 15px;
-      &__title {
+      &__title{
         font-size: 25px;
         text-decoration: none;
         margin-right: 45px;
       }
-      &__search-form {
+      &__search_form{
         width: 100%;
-        .input-box {
+        .input_box{
           display: flex;
           width: 100%;
           position: relative;
-          &__form {
+          &__form{
             height: 40px;
             width: 100%;
             font-size: 15px;
             padding-left: 5px;
           }
-          .search-btn {
+          .search_btn{
             width: 36px;
             height: 40px;
             border: 0;
@@ -38,33 +38,30 @@
         }
       }
     }
-    &__bottom {
+    &__bottom{
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
-      .left-lists {
+      .left_lists{
         display: flex;
         margin-top: 10px;
-        &__category{
-          .category-title {
-            text-decoration: none;
-            font-size: 14px;
-            color: black;
-            margin-right: 10px;
-            padding-bottom: 3px;
-          }
+        .category_title{
+          text-decoration: none;
+          font-size: 14px;
+          color: black;
+          margin-right: 10px;
+          padding-bottom: 3px;
         }
-        &__brands {
-          .brand-title {
-            text-decoration: none;
-            font-size: 14px;
-            color: black;
-          }
+        .brand_title{
+          text-decoration: none;
+          font-size: 14px;
+          color: black;
         }
+        
       }
-      .right-lists {
-        .user-btn {
-          .sign-up-btn {
+      .right_lists{
+        .user_btn{
+          .sign_up_btn{
             display       : inline-block;
             font-size     : 12pt;
             text-align    : center;
@@ -76,7 +73,7 @@
             transition    : .3s; 
             text-decoration: none;
           }
-          .login-btn {
+          .login_btn{
             display       : inline-block;
             border-radius : 5%;
             font-size     : 12pt;
@@ -95,13 +92,13 @@
     }
   }
 }
-.category-box {
+.category-box{
   z-index: 1;
   width: 200px;
   background-color: white;
   display: none;
-  &__category-parent {
-    &__link {
+  &__category-parent{
+    &__link{
       text-decoration: none;
       color: black;
       font-size: 12px;
@@ -112,68 +109,68 @@
     }
   }
 }
-#category-parent-1 {
-  :hover {
+#category-parent-1{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-2 {
-  :hover {
+#category-parent-2{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-3 {
-  :hover {
+#category-parent-3{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-4 {
-  :hover {
+#category-parent-4{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-5 {
-  :hover {
+#category-parent-5{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-6 {
-  :hover {
+#category-parent-6{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-7 {
-  :hover {
+#category-parent-7{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-8 {
-  :hover {
+#category-parent-8{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-9 {
-  :hover {
+#category-parent-9{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-10 {
-  :hover {
+#category-parent-10{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-11 {
-  :hover {
+#category-parent-11{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-12 {
-  :hover {
+#category-parent-12{
+  :hover{
     background-color: #3CCACE;
   }
 }
-#category-parent-13 {
-  :hover {
+#category-parent-13{
+  :hover{
     background-color: #3CCACE;
   }
 }
