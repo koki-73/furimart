@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
     @item = Item.new   
     @category_parent_array = Category.where(ancestry: nil)
   end
-
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
