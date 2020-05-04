@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :my_pages, only: :index
+<<<<<<< HEAD
+=======
+  resources :items, only: :show do
+    resources :comments, only: :create
+  end
+>>>>>>> origin/comment
   resources :categories, only: :show
   resources :brands, only: :index
   resources :credit_cards, only: :new do

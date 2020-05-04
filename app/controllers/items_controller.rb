@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   def index
-
   end
 
   def new
@@ -22,10 +21,17 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
+<<<<<<< HEAD
   
   private
   def child_params
     params.permit(:child_id)
   end
+=======
+
+>>>>>>> origin/comment
 end
