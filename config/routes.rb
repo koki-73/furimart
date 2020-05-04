@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'items#index'
+  root 'items#new'
+
   resources :users, only: :show
   resources :my_pages, only: :index
-  resources :items, only: :show do
+  resources :items, only: [:show, :new, :create]
     resources :comments, only: :create
-  end
   resources :categories, only: :show
   resources :brands, only: :index
   resources :credit_cards, only: :new do
