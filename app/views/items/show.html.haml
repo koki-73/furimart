@@ -2,7 +2,8 @@
   .item__show__main
     .item__show__main__content
       .item__show__main__content__detail
-        %h1.item__name プラダ  リュック  レッド
+        %h1.item__name 
+          = @item.name
         .item__photo
           %ul
             %li
@@ -50,13 +51,15 @@
               %td 
             %tr 
               %th 商品の状態
-              %td 傷や汚れあり
+              %td
+                = Status.find(@item.status).name
             %tr 
               %th 配送料の負担
               %td 送料込み(出品者負担)
             %tr 
               %th 配送の方法
-              %td らくらくメルカリ便
+              %td
+                = @item.delivery_method
             %tr 
               %th 配送元地域
               %td 
