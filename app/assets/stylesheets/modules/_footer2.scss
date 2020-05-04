@@ -3,42 +3,36 @@
   padding: 40px 0;
   text-align: center;
   position: relative;
-  @media only screen and (min-width:651px) {
-    &__link {
-      display: flex;
-      position: absolute;
-      left: 150px;
+  &__link {
+    text-align: center;
+    li {
+      display: inline;
+      a {
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+      }
+      span {
+        margin-left: 15px;
+      }
     }
-  }
-  @media only screen and (min-width:961px) {
-    &__link {
-      display: flex;
-      position: absolute;
-      left: 510px;
-    }
-  }
-
-  span {
-    margin-left: 15px;
-  }
-  
-  a {
-    color: #333;
-    font-size: 12px;
-    text-decoration: none;
-    
   }
   .footer__logo {
     margin-top: 50px;
-  }
-  img {
-    width: 140px;
-    height: 40px;
-    &:hover{
-      opacity: 0.7; 
+    a {
+      color: #333;
+      font-size: 12px;
+      text-decoration: none;
     }
-  }
-  p {
-    font-size: 13px;;
-  }
+    img {
+      width: 140px;
+      height: 40px;
+      &:hover{
+        opacity: 0.7; 
+      }
+    }
+    p {
+      font-size: 13px;;
+    }
+  } 
 }
