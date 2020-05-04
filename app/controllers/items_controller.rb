@@ -15,10 +15,6 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find(child_id).children 
   end
 
-  def create
-    Item.create
-  end
-
   def show
     @item = Item.find(params[:id])
     @comment = Comment.new
