@@ -9,5 +9,5 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :buyer, class_name: "User"
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :status
+  belongs_to_active_hash :item_status
 end
