@@ -4,25 +4,33 @@
       = link_to "#" do
         .users-detail-photo
           = image_tag('member_photo_noimage_thumb.png', height: '180px', width: '180px')
-        %h2 name
+        %h2
+          = @user.nickname
     .users-score
       %span
-        = "##"
+        - rates = UserRate.where(user_id: @user.id).length
+        = "評価#{rates}"
       %span
-        = "##"
+        - user_items = Item.where(user_id: @user.id).length
+        = "出品数#{user_items}"
   .users-rate-area
     .users-rate-area__good
       = icon('fas', 'laugh', class: "good-icon")
-      %span ##
+      %span
+        - good_rates = UserRate.where(user_id: @user.id, rate: "good").length
+        = "#{good_rates}"
     .users-rate-area__good
       = icon('fas', 'meh', class: "normal-icon")
-      %span ##
+      %span
+        - normal_rates = UserRate.where(user_id: @user.id, rate: "normal").length
+        = "#{normal_rates}"
     .users-rate-area__good
       = icon('fas', 'frown', class: "bad-icon")
-      %span ##
+      %span
+        - bad_rates = UserRate.where(user_id: @user.id, rate: "bad").length
+        = "#{bad_rates}"
   .users-self-introduce-area
-    自己紹介です
-    よろしくお願いします。
+    = "#{Profile.find_by(user_id: @user.id).introduction}"
   .social-media-box
     = link_to "#", class: "facebook" do
       = icon('fab', 'facebook-square', class: "facebook-icon")
