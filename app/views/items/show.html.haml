@@ -16,7 +16,8 @@
                 %li 
                   = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
         .item__price
-          %span.item__price__main ￥8800
+          %span.item__price__main 
+            
           .item__price__detail
             %span (税込)
             %span 送料込み
@@ -55,18 +56,20 @@
                 = ItemStatus.find(@item.status).statu
             %tr 
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td
+                = ItemDeliveryFee.find(@item.delivery_fee).payer
             %tr 
               %th 配送の方法
               %td
-                = @item.delivery_method
+                = ItemDeliveryMethod.find(@item.delivery_method).way
             %tr 
               %th 配送元地域
               %td 
-                = link_to "愛知県", "#"
+                = ItemPrefecture.find(@item.delivery_from_location).name
             %tr 
               %th 発送日の目安
-              %td 1~2日で発送
+              %td
+                = ItemPreparationDay.find(@item.preparation_day).days
         .optionalArea
           %ul.star__btn
             %li.star__btn__detail
