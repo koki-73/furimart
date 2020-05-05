@@ -34,37 +34,7 @@
     %h2.items-box-head
       この出品者の商品
     .items-box-content
-      -# ここはあとでrenderします
-      = render partial: 'items/item', collection: @items
-      -# .items-box
-      -#   = link_to ""
-      -#   .items-box__photo
-      -#     = image_tag @items[0].item_images[0].image.url
-      -#   .items-box__body
-      -#     %h3.items-name
-      -#       = @items[0].name
-      -#     .items-num
-      -#       .items-price
-      -#         = @items[0].price
-      -#       -# 以下はいいねがなければ非表示にします
-      -#       .items-likes  
-      -#         = icon('far', 'heart', class: "like-icon")
-      -#         %span 73
-      -# .items-box
-      -#   = link_to ""
-      -#   .items-box__photo
-      -#   .items-box__body
-      -#     item
-      -# .items-box
-      -#   = link_to ""
-      -#   .items-box__photo
-      -#   .items-box__body
-      -#     item
-      -# .items-box
-      -#   = link_to ""
-      -#   .items-box__photo
-      -#   .items-box__body
-      -#     item
+      = render partial: 'item', collection: @items
 
   = link_to "#", class: "sell-btn" do
     %div 出品する
