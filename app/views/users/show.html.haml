@@ -35,35 +35,37 @@
       この出品者の商品
     .items-box-content
       -# ここはあとでrenderします
-      .items-box
-        = link_to ""
-        .items-box__photo
-        .items-box__body
-          %h3.items-name itemitemitemitemitemitemitemitemitemitemitemitemitem
-          .items-num
-            .items-price 2000
-            -# 以下はいいねがなければ非表示にします
-            .items-likes  
-              = icon('far', 'heart', class: "like-icon")
-              %span 73
-      .items-box
-        = link_to ""
-        .items-box__photo
-        .items-box__body
-          item
-      .items-box
-        = link_to ""
-        .items-box__photo
-        .items-box__body
-          item
-      .items-box
-        = link_to ""
-        .items-box__photo
-        .items-box__body
-          item
-
+      = render partial: 'items/item', collection: @items
+      -# .items-box
+      -#   = link_to ""
+      -#   .items-box__photo
+      -#     = image_tag @items[0].item_images[0].image.url
+      -#   .items-box__body
+      -#     %h3.items-name
+      -#       = @items[0].name
+      -#     .items-num
+      -#       .items-price
+      -#         = @items[0].price
+      -#       -# 以下はいいねがなければ非表示にします
+      -#       .items-likes  
+      -#         = icon('far', 'heart', class: "like-icon")
+      -#         %span 73
+      -# .items-box
+      -#   = link_to ""
+      -#   .items-box__photo
+      -#   .items-box__body
+      -#     item
+      -# .items-box
+      -#   = link_to ""
+      -#   .items-box__photo
+      -#   .items-box__body
+      -#     item
+      -# .items-box
+      -#   = link_to ""
+      -#   .items-box__photo
+      -#   .items-box__body
+      -#     item
 
   = link_to "#", class: "sell-btn" do
     %div 出品する
     = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"
-    -# = icon('fas', 'camera', class: "camera-icon")
