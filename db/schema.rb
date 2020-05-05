@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_003005) do
+ActiveRecord::Schema.define(version: 2020_05_05_001403) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -56,18 +56,18 @@ ActiveRecord::Schema.define(version: 2020_05_01_003005) do
     t.string "name", null: false
     t.integer "price", null: false
     t.integer "status", null: false
-    t.bigint "brand_id", null: false
-    t.string "buyer_id", null: false
-    t.string "delivery_payer_id", null: false
+    t.bigint "brand_id"
+    t.string "buyer_id"
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "size_id", null: false
-    t.string "delivery_method", null: false
-    t.string "delivary_from_location", null: false
+    t.bigint "size_id"
+    t.integer "delivery_method", null: false
+    t.integer "delivery_from_location", null: false
     t.text "item_explanation", null: false
     t.integer "preparation_day", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "delivery_fee"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["size_id"], name: "index_items_on_size_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_003005) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "post_code", null: false
-    t.integer "tel_number"
+    t.string "tel_number"
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
