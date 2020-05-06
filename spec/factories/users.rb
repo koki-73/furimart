@@ -14,4 +14,4 @@ FactoryBot.define do
 
 end
 
-# user = User.new(nickname: "aa", email: "aaa@gmail.com", password: "0000000", password_confirmation: "0000000", family_name: "高橋", first_name: "奏", family_name_kana: "タカハシ", first_name_kana: "カナ", birth_day: "1992-12-03")
+user = User.new(nickname: "", email: "aaa@gmail.com", password: "0000000", password_confirmation: "0000000", family_name: "高橋", first_name: "奏", family_name_kana: "タカハシ", first_name_kana: "カナ", birth_day: "1992-12-03")
