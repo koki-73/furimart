@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new   
+    @item = Item.new
     @category_parent_array = Category.where(ancestry: nil)
   end
   def get_category_children
@@ -17,6 +17,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @category_grandchild = Category.find(@item.category_id)
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end

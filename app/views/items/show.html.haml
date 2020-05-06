@@ -16,40 +16,58 @@
                 %li 
                   = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
         .item__price
-          %span.item__price__main 
-            
+          %span.item__price__main
+            = "¥#{@item.price}"
           .item__price__detail
             %span (税込)
             %span 送料込み
-        .item__message 美味しい料理。フルコース。
+        - unless current_user.id == @item.user_id && user_signed_in?
+          .item__buy__btn
+            = link_to "購入画面に進む", new_purchase_path
+        .item__message
+          = @item.item_explanation
         .item__table
           %table{border: "1"}
             %tr 
               %th 出品者
               %td 
-                = link_to "メン", "#"
+                = link_to "#" do
+                  = @item.user.nickname
                 %br
                 %i.fas.fa-laugh
-                %span 10
+                %span
+                  - good_rates = UserRate.where(user_id: @item.user.id, rate: "good").length
+                  = "#{good_rates}"
                 %i.fas.fa-meh
-                %span 10
+                %span
+                  - normal_rates = UserRate.where(user_id: @item.user.id, rate: "normal").length
+                  = "#{normal_rates}"
                 %i.fas.fa-frown
-                %span 10
+                %span
+                  - bad_rates = UserRate.where(user_id: @item.user.id, rate: "bad").length
+                  = "#{bad_rates}"
             %tr 
               %th カテゴリー
               %td
-                = link_to "メンズ", "#" 
+                = link_to "#" do
+                  = @category_grandchild.name
                 %br
-                = link_to "バッグ", "#" 
+                = link_to "#" do
+                  = @category_child.name
                 %br
-                = link_to "リュック", "#" 
+                = link_to "#" do
+                  = @category_parent.name
             %tr 
               %th ブランド
-              %td  
-                = link_to "プラダ", "#"
+              %td
+                - if @item.brand.present?
+                  = link_to "#" do
+                    = Brand.find(@item.brand_id).name
             %tr 
               %th 商品のサイズ
-              %td 
+              %td
+                - if @item.size.present?
+                  = Size.find(@item.size_id).name
             %tr 
               %th 商品の状態
               %td
@@ -73,7 +91,7 @@
         .optionalArea
           %ul.star__btn
             %li.star__btn__detail
-              %i.fa.fa-star 
+              %i.far.fa-heart
               お気に入り 0
           %ul.flag__btn
             %li.flag__btn__detail
@@ -86,9 +104,9 @@
             - @comments.each do |comment| 
               .comment__list__content
                 .comment__list__content__user
-                  = link_to "item_path{comment.item.id}", class: "user__nickname" do
-                    = comment.user.nickname
-                  = link_to "item_path{comment.item.id}" do
+                  = link_to my_pages_path{comment.user_id}, class: "user__nickname" do
+                    = User.find{@item.user_id}.nickname
+                  = link_to my_pages_path{comment.user_id} do
                     = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "user__image"
                 .comment__list__content__message
                   = simple_format(comment.content)
@@ -105,14 +123,6 @@
                 不快な言葉遣いなどは利用制限や退会処分となることがあります
               = f.button type: "subnit", class: "commentBtn" do
                 %i.fa.fa-comment コメントする
-    %ul.item__show__main__links
-      %li
-        = link_to "#" do
-          %i.fa.fa-angle-left
-          %span 前の商品
-      %li
-        = link_to "#" do
-          %span 後ろの商品
-          %i.fa.fa-angle-right
     .item__show__main__relatedeItems
-      = link_to "メンズをもっと見る", "#" 
+      = link_to "#" do
+        = "#{@item.category.name}をもっと見る"
