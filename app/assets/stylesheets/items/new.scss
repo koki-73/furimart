@@ -1,10 +1,51 @@
 .items-new-wrapper {
   padding: 50px 0;
   .form__area {
-    background-color: white;
-    width: 700px;
+    width: 720px;
+    padding:20px;
     margin: 0 auto;
-    padding: 40px;
+    font-size: 14px;
+    margin-bottom: 2px;
+    background-color: white;
+    .flexbox {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 660px;
+      .file-field{
+        display: none;
+      }
+      .new-wrapper__main__image-field {
+        height: 450px;
+        width: 660px;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        #camera-icon {
+          margin-left: 125px;
+        }
+      }
+      .new-wrapper__main__preview,.new-wrapper__main__preview-first {
+        margin: 16px 0;
+        display: flex;
+        flex-wrap: wrap;
+        &__image {
+          position: relative;
+          &__img {
+            width: 131px;
+            margin-right: 1px;
+            height: 160px;
+            object-fit: cover;
+          }
+          &__delete-btn {
+            text-shadow: 0 0 2px white;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+          }
+        }
+      }
+    }
     .form__content__image {
       margin: 0 auto;
       background-color: white;
@@ -12,7 +53,7 @@
         display: inline-block;
       margin: 20px 0 10px;
       }
-      .form_box　{　
+      .form-box { 
         h3.form__box__image {
           margin-top: 10px;
           font-size: 13px;
@@ -22,9 +63,10 @@
       .form__box__area {
         margin-top: 20px;
         width: 100%;
-        border: 1px solid;
-        height: 200px;
+        border: 1px solid #ccc;
+        height: 450px;
         padding: 13px 16px;
+        color: #ccc;
       }
     }
   }
