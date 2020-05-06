@@ -8,4 +8,10 @@ class Item < ApplicationRecord
   belongs_to :size
   belongs_to :brand
   belongs_to :buyer, class_name: "User"
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :item_status
+  belongs_to_active_hash :item_delivery_fee
+  belongs_to_active_hash :item_delivery_method
+  belongs_to_active_hash :item_prefecture
+  belongs_to_active_hash :item_preparation_day
 end
