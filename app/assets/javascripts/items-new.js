@@ -65,4 +65,10 @@ $(function(){
     var blob = window.URL.createObjectURL(e.target.files[0]);
     buildImage(blob);
   })
+  $("#price-form").on("keyup", function(){
+    var price = $("#price-form").val();
+    var profit = Math.ceil(price * 0.9);
+    $(".profit__price").empty();
+    $(".profit__price").append(`${profit}円`);
+  })
 })
