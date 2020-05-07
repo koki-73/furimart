@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.includes(:item_images)
-    @items_brand = Item.where(brand_id: 2).includes(:item_images).offset(0).limit(3)
+    # @items_brand = Item.where(brand: "test").includes(:item_images).offset(0).limit(3)
   end
 
   def new
