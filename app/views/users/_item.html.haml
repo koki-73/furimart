@@ -1,0 +1,17 @@
+.items-box-content
+  .items-box
+    = link_to item_path(item.id) do
+      .items-box__photo
+        = image_tag item.item_images[0].image.url
+      .items-box__body
+        %h3.items-name
+          = item.name
+        .items-num
+          .items-price
+            = "¥#{item.price}"
+          .items-likes  
+            - likes = Like.where(item_id: item.id).length
+            - if likes >= 1
+              = icon('far', 'heart', class: "like-icon")
+              %span 
+                = "#{likes}"

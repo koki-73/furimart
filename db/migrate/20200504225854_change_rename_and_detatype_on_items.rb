@@ -10,3 +10,4 @@ class ChangeRenameAndDetatypeOnItems < ActiveRecord::Migration[5.2]
     add_column :items, :delivery_fee, :integer
   end
 end
+
