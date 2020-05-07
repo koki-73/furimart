@@ -36,7 +36,7 @@
           %span.required__text
             必須
           .items-new__page__main__explanation__form
-            = form.text_area :name, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年頃に一万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "items-new__page__main__name__form__bar"
+            = form.text_area :item_explanation, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年頃に一万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "items-new__page__main__name__form__bar"
           .text__count
             %span 0/1000
         .form__detail
@@ -58,25 +58,43 @@
           %span.any__text
             任意
           .items-new__brand__main__name__form
-            = form.text_field :name, placeholder: "例）シャネル", class: "items-new__brand__main__name__form__bar"  
+            = form.text_field :brand, placeholder: "例）シャネル", class: "items-new__brand__main__name__form__bar"  
         .form__content
           %h5.form__title
             商品の状態
           %span.required__text
             必須
           .item_new_brand_text
-            = form.select :preparation_day, [["新品・未使用", 0],["未使用に近い", 1], ["目立った傷や汚れなし", 2], ["やや傷や汚れあり", 3]], prompt: "---"
+            = form.collection_select :status, ItemStatus.all, :id, :status, prompt: "---"
             .arrow-icon
               = icon('fas' , 'chevron-down', class: "arrow-icon")
         .form__delivery
           配送について
         .form__content
           %h5.form__title
-            配送の負担
+            配送料の負担
           %span.required__text
             必須
         .item_new_brand_text
-          = form.select :preparation_day, [["送料込み", 0],["着払い", 1]], prompt: "---" 
+          = form.collection_select :delivery_fee, ItemDeliveryFee.all, :id, :payer, prompt: "---"
+          .arrow-icon
+            = icon('fas' , 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            配送の方法
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :delivery_method, ItemDeliveryMethod.all, :id, :way, prompt: "---"
+          .arrow-icon
+            = icon('fas' , 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            発送元の地域
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :delivery_from_location, ItemPrefecture.all, :id, :name, prompt: "---"
           .arrow-icon
             = icon('fas' , 'chevron-down', class: "arrow-icon")
         .form__content
@@ -85,11 +103,9 @@
           %span.required__text
             必須
         .item_new_brand_text
-          = form.select :preparation_day, [["1〜2日で発送", 0],["2〜3日で発送", 1],["4〜7日で発送", 2]], prompt: "---" 
+          = form.collection_select :preparation_day, ItemPreparationDay.all, :id, :days, prompt: "---"
           .arrow-icon
             = icon('fas' , 'chevron-down', class: "arrow-icon")
-        .form__price__title
-          価格（¥300〜9,999,999）
         .form__price
           .form__price__head
             %h5.form__title
