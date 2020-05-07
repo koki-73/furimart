@@ -9,4 +9,12 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :buyer, class_name: "User"
   accepts_nested_attributes_for :item_images, allow_destroy: true
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :item_status
+  belongs_to_active_hash :item_delivery_fee
+  belongs_to_active_hash :item_delivery_method
+  belongs_to_active_hash :item_prefecture
+  belongs_to_active_hash :item_preparation_day
+  
 end
