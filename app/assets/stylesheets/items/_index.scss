@@ -1,7 +1,7 @@
-.main{
+.main {
   background-color: #f8f8f8;
   margin: 0 auto;
-  .menu1{
+  .menu1 {
     width: 100vw;
     height: 560px;
     background-image: image-url("bg-mainVisual-pict_pc.jpg");
@@ -12,33 +12,33 @@
     padding: 0 60px;
     display: flex;
     align-items: center;
-    &__content{
+    &__content {
       max-width: 1280px;
       width: 100%;
       margin: 0 auto;
       padding: 35px 0 0 0;
-      &__title{
+      &__title {
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-size: 60px;
         line-height: 1.2;
         color: #fff;
       }
-      &__text{
+      &__text {
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-size: 18px;
         color: #fff;
         line-height: 1.77778;
         margin: 16px 0 0 0;
       }
-      &__btn{
+      &__btn {
         display: flex;
         margin: 24px 0 0 0;
       }
     }
   }
-  .menu2{
+  .menu2 {
     padding: 60px 20px;
-    &__title{
+    &__title {
       text-align: center;
       font-size: 26px;
       line-height: 1.4;
@@ -47,7 +47,7 @@
       padding-bottom: 15px;
       position: relative;
     }
-    &__title:after{
+    &__title:after {
       content: "";
       width: 70px;
       height: 4px;
@@ -57,20 +57,20 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &__lists{
+    &__lists {
       text-align: center;
       display: flex;
       max-width: 1020px;
       width: 100%;
       margin: 0 auto;
-      &__list{
+      &__list {
         width: 30%;
         margin: 16px 5% 0 0;
         text-align: left;
         display: flex;
         flex-direction: column;
         align-items: center;
-        &__pict{
+        &__pict {
           position: relative;
           margin-bottom: 20px;
           span {
@@ -87,7 +87,7 @@
             color: #fff;
           }
         }
-        &__title{
+        &__title {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
@@ -96,7 +96,7 @@
             color: #3CCACE;
           }
         }
-        &__text{
+        &__text {
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 0 0;
@@ -104,39 +104,39 @@
       }
     }
   }
-  .menu3{
+  .menu3 {
     background-image: image-url("bg-topMiddleDl-pict.jpg");
     background-position: bottom right;
     height: 400px;
     background-size: cover;
     display: flex;
     align-items: center;
-    &__inner{
+    &__inner {
       color: #fff;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       text-align: left;
       max-width: 1040px;
       width: 100%;
       margin: 0 auto;
-      &__title{
+      &__title {
         font-size: 27px;
         font-weight: bold;
         line-height: 1.4;
       }
-      &__text{
+      &__text {
         font-size: 18px;
         margin: 20px 0 30px;
         line-height: 1.5;
       }
-      &__btn{
+      &__btn {
         display: flex;
       }
     }
   }
-  .menu4{
+  .menu4 {
     padding: 60px 100px;
     background-color: #fff;
-    &__title{
+    &__title {
       font-size: 27px;
       text-align: center;
       margin: 0 0 40px;
@@ -145,7 +145,7 @@
       padding-bottom: 15px;
       position: relative;
     }
-    &__title:after{
+    &__title:after {
       content: "";
       width: 70px;
       height: 4px;
@@ -155,25 +155,25 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &__lists{
+    &__lists {
       text-align: center;
       display: flex;
       max-width: 1020px;
       width: 100%;
       margin: 0 auto;
-      &__item{
+      &__item {
         width: 30%;
         margin: 16px 5% 0 0;
         text-align: left;
         display: flex;
         flex-direction: column;
         align-items: center;
-        &__title{
+        &__title {
           margin: 38px 0 10px;
           font-size: 19px;
           font-weight: bold;
         }
-        &__text{
+        &__text {
           margin: 0 0 40px;
           font-size: 17px;
           font-weight: 200;
@@ -182,18 +182,18 @@
       }
     }
   }
-  .menu5{
+  .menu5 {
     padding: 80px 0 0;
     background-color: #f8f8f8;
     height: 100%;
-    &__title{
+    &__title {
       text-align: center;
       font-size: 28px;
       line-height: 1.4;
       font-weight: bold;
     }
-    &__item_box{
-      &__title{
+    &__item_box {
+      &__title {
         text-align: center;
         a {
           font-size: 24px;
@@ -201,29 +201,34 @@
           color: #3CCACE;
         }
       }
-      &__items{
+      &__items {
         width: 780px;
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-        &__item{
+        &__item {
           width: 220px;
           a {
             background-color: #fff;
             display: inline-block;
             text-decoration: none;
-            .image{
+            .images {
               width: 220px;
               height: 150px;
               position: relative;
               overflow: hidden;
               margin: 0;
               z-index: auto;
+              &__image {
+                height: 150px;
+                width: 220px;
+              }
               .sold-tag {
                 top: 20px;
                 font-size: 16px;
                 &__title {
                 position: absolute;
+                top: 25px;
                 left: 0;
                 z-index: 2;
                 color: #fff;
@@ -246,22 +251,22 @@
               }
             }
           }
-          .box{
+          .box {
             background-color: white;
             color: #333;
             padding: 16px;
-            &__title{
+            &__title {
               line-height: 1.5;
               font-size: 16px;
               text-align: left;
             }
-            &__content{
-              ul{
+            &__content {
+              ul {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
               }
-              p{
+              p {
                 font-size: 10px;
                 text-align: left;
               }
