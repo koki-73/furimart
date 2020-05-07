@@ -1,6 +1,5 @@
 $(function(){
   var index = [0,1,2,3,4,5,6,7,8,9];
-  // 編集箇所ここから
   $(".flexbox").on("click", ".delete-btn", function(){
     var targetIndex = Number($(this).attr("index"));
     index.push(targetIndex);
@@ -24,9 +23,7 @@ $(function(){
     $(this).parent().remove();
     $(`#item_item_images_attributes_${targetIndex}_image`).remove();
     $(".flexbox").append(`<input class="file-field" type="file" name="item[item_images_attributes][${targetIndex}][image]" id="item_item_images_attributes_${targetIndex}_image">`);
-
   })
-  // 編集箇所ここまで
   var buildImage = function(url){
     if(index.length != 0){
       $(".new-wrapper__main__preview").append(`

@@ -10,7 +10,6 @@
           %h3.form__box__image
             最大10枚までアップロードできます
         .form__box__area
-          -# = form.fields_for :item_images do |image|
           .flexbox
             .new-wrapper__main__preview
             %label{id: "image-wrapper", action: request.path}

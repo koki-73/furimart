@@ -8,7 +8,6 @@ class Item < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :buyer, class_name: "User", optional: true
   accepts_nested_attributes_for :item_images, allow_destroy: true
-  # validates :item_image, presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :item_status
