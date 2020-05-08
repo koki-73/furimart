@@ -51,13 +51,14 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |post_code|integer|null: false|
-|tel_number|integer| |
+|tel_number|string| |
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |bullding|string| |
 |image|string| |
 |user_id|reference|null: false|
+|introduce|text| |
 
 ### Association
 - belongs_to :user
@@ -90,13 +91,14 @@ Things you may want to cover:
 |name|string|null: false|
 |price|integer|null: false|
 |status|integer|null: false|
-|brand_id|reference|null: false|
+|brand_id|reference|fk true|
 |buyer_id|reference|fk true|
-|delivery_payer_id|reference|null: false|
+|delivery_fee|integer|null: false|
 |category_id|reference|null: false|
 |user_id|reference|null: false|
-|delivery_method|string|null: false|
-|delivery_from_location|string|null: false|
+|size_id|reference|fk true|
+|delivery_method|integer|null: false|
+|delivery_from_location|integer|null: false|
 |item_explanation|text|null: false|
 |preparation_day|integer|null: false|
 
@@ -123,7 +125,7 @@ Things you may want to cover:
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
-|comment|text|null: false|
+|content|text|null: false|
 |user_id|reference|null: false|
 |item_id|reference|null: false|
 

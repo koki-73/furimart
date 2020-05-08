@@ -78,7 +78,8 @@ gem 'jquery-rails'
 gem 'ancestry'
 gem 'payjp'
 gem 'fog-aws'
-gem 'faker'
+gem 'active_hash'
+
 
 group :production do
   gem 'unicorn'
