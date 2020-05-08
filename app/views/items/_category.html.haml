@@ -1,0 +1,20 @@
+- items.each do |item|
+  .menu5__item_box__items__item
+    = link_to item_path(item.id) do
+      .images
+        = image_tag item.item_images[0].image.url, class: "images__image"
+        - if item.buyer_id == '1'
+          .sold-tag
+            .sold-tag__title sold out
+      .box
+        %h3.box__title
+          = item.name
+        .box__content
+          %ul
+            %li
+              = item.price
+            %li
+              = icon('far','heart', class: 'icon')
+              ０
+          %p (税込)
+    

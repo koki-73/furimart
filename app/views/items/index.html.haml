@@ -74,86 +74,15 @@
       .menu5__item_box__title
         = link_to "新規投稿商品"
       .menu5__item_box__items
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
+        = render partial: "category", locals: {items: @items}
   .menu5
     %h2.menu5__title ピックアップブランド
     .menu5__item_box
       .menu5__item_box__title
         = link_to "アーカイバ"
       .menu5__item_box__items
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
-        .menu5__item_box__items__item
-          = link_to "#" do
-            = image_tag('m76602137429_1 .png',class: 'image')
-            .box
-              %h3.box__title 商品名
-              .box__content
-                %ul
-                  %li 1000円
-                  %li
-                    = icon('fas','star', class: 'icon')
-                    ０
-                %p (税込)
+        = render partial: "brand", locals: {items: @items_brand}
 
-
-    = link_to "#", class: "sell-btn" do
+    = link_to new_item_path, class: "sell-btn" do
       出品する
       = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"
