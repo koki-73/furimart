@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :show, :new, :create, :edit, :destroy] do
+    resources :purchases, only: [:new, :create, :show]
     resources :comments, only: :create
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -19,5 +20,4 @@ Rails.application.routes.draw do
       get 'show', to: 'credit_cards#show'
     end
   end
-  resources :purchases, only: [:new, :create]
 end

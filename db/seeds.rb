@@ -322,3 +322,44 @@ other_5.children.create([{name:"タオル/バス用品"},{name:"日用品/生活
 other_6.children.create([{name:"雑貨"},{name:"工芸品"},{name:"家具"},{name:"印刷物"},{name:"その他"}])
 other_7.children.create([{name:"筆記用具"},{name:"ノート/メモ帳"},{name:"カレンダー/スケジュール"},{name:"アルバム/スクラップ"},{name:"ファイル/バインダー"},{name:"はさみ/カッター"},{name:"カードホルダー/名刺管理"},{name:"のり/ホッチキス"},{name:"その他"}])
 other_8.children.create([{name:"オフィス用品一般"},{name:"オフィス家具"},{name:"店舗用品"},{name:"OA機器"},{name:"ラッピング/包装"},{name:"その他"}])
+
+
+  # CreditCard.create!(
+  # user_id: 1,
+  # customer_id: '4111111111111111',
+  # card_id: '7'
+  # )
+
+# Size.create!(
+#   name: "L"
+# )
+
+
+# Brand.create!(
+#   name: "テスト2",
+# )
+
+  Item.create!(
+    name: "sss",
+    price: 1000,
+    status: "良",
+    brand_id: "1",
+    buyer_id: "1",
+    delivery_payer_id: "1",
+    category_id: "1",
+    user_id: "1",
+    size_id: "1",
+    delivery_method: "送料込み",
+    delivary_from_location: "千葉",
+    item_explanation: "iii",
+    preparation_day: "5日",
+    )
+
+  # Profile.create!(
+  #   post_code: "333-3333",
+  #   tel_number: "111-1111-1111",
+  #   prefecture: "千葉",
+  #   city: "相模原",
+  #   address: "111-11",
+  #   user_id: "1",
+  # )

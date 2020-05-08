@@ -46,12 +46,27 @@
                 line-height: 1.5;
                 text-align: left;
               }
-              .buy__price {
-                text-align: left;
-                font-size: 12px;
-                font-weight: bold;
-                .buy__fee {
+              .buy__item__box__detail2{
+                display: flex;
+                .buy__icon{
+                  font-size: 13px;
+                  margin-top: 1px;
+                }
+                .buy__price {
+                  text-align: left;
                   font-size: 12px;
+                  font-weight: bold;
+                }
+                .buy__item_tax__price{
+                  display: flex;
+                  .buy__tax{
+                    font-size: 12px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                  }
+                  .buy__fee {
+                    font-size: 12px;
+                  }
                 }
               }
             }
@@ -65,6 +80,11 @@
               display: flex;
               justify-content: space-between;
               font-weight: bold;
+              .buy__price__table{
+                .buy__price__label {
+                  padding: 0;
+                }
+              }
             }
             .buy__method {
               width: 343px;
