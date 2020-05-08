@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @like = Like.new
   end
   
   private

@@ -65,10 +65,13 @@
               %th 発送日の目安
               %td 1~2日で発送
         .optionalArea
-          %ul.star__btn
-            %li.star__btn__detail
-              %i.fa.fa-star 
-              お気に入り 0
+          - if current_user.already_liked?(@item)
+          
+            %ul.star__btn
+              %li.star__btn__detail
+                %i.fa.fa-star 
+                お気に入り
+              = @item.likes.count
           %ul.flag__btn
             %li.flag__btn__detail
               = link_to "#" do
