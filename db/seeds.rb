@@ -339,21 +339,21 @@ other_8.children.create([{name:"オフィス用品一般"},{name:"オフィス�
 #   name: "テスト2",
 # )
 
-  Item.create!(
-    name: "sss",
-    price: 1000,
-    status: "良",
-    brand_id: "1",
-    buyer_id: "1",
-    delivery_payer_id: "1",
-    category_id: "1",
-    user_id: "1",
-    size_id: "1",
-    delivery_method: "送料込み",
-    delivary_from_location: "千葉",
-    item_explanation: "iii",
-    preparation_day: "5日",
-    )
+  # Item.create!(
+  #   name: "sss",
+  #   price: 1000,
+  #   status: "良",
+  #   brand_id: "1",
+  #   buyer_id: "1",
+  #   delivery_payer_id: "1",
+  #   category_id: "1",
+  #   user_id: "1",
+  #   size_id: "1",
+  #   delivery_method: "送料込み",
+  #   delivary_from_location: "千葉",
+  #   item_explanation: "iii",
+  #   preparation_day: "5日",
+  #   )
 
   # Profile.create!(
   #   post_code: "333-3333",
