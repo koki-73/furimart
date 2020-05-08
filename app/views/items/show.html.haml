@@ -5,16 +5,17 @@
         %h1.item__name 
           = @item.name
         .item__photo
-          %ul
-            %li
-              = image_tag  "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-              %ul
-                %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-                %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-                %li 
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
+          .item__photo__content
+            .item__photo__content__detail
+              .item__photo__content__detail__main
+                = image_tag "#{@image.image}"
+                - @images[1..9].each do |image|
+                  = image_tag "#{image.image}"
+          .item__photo__sub
+            .item__photo__sub__size
+              = image_tag "#{@image.image}"
+              - @images[1..9].each do |image|
+                = image_tag "#{@image.image}"
         .item__price
           %span.item__price__main
             = "¥#{@item.price}"
@@ -50,19 +51,19 @@
               %th カテゴリー
               %td
                 = link_to "#" do
-                  = @category_grandchild.name
+                  = @category_parent.name
                 %br
                 = link_to "#" do
                   = @category_child.name
                 %br
                 = link_to "#" do
-                  = @category_parent.name
+                  = @category_grandchild.name
             %tr 
               %th ブランド
               %td
                 - if @item.brand.present?
                   = link_to "#" do
-                    = Brand.find(@item.brand_id).name
+                    = @item.brand
             %tr 
               %th 商品のサイズ
               %td
@@ -71,7 +72,7 @@
             %tr 
               %th 商品の状態
               %td
-                = ItemStatus.find(@item.status).statu
+                = ItemStatus.find(@item.status).status
             %tr 
               %th 配送料の負担
               %td
@@ -89,12 +90,12 @@
               %td
                 = ItemPreparationDay.find(@item.preparation_day).days
         .optionalArea
-          %ul.heart__btn
-            %li.star__btn__detail
+          .heart__btn
+            .heart__btn__detail
               %i.far.fa-heart
               お気に入り 0
-          %ul.flag__btn
-            %li.flag__btn__detail
+          .flag__btn
+            .flag__btn__detail
               = link_to "#" do
                 %i.fa.fa-flag
                 不適切な商品の通報
@@ -112,7 +113,7 @@
                   = link_to my_pages_path{comment.user_id}, class: "user__nickname" do
                     = User.find{@item.user_id}.nickname
                   = link_to my_pages_path{comment.user_id} do
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "user__image"
+                    = image_tag "member_photo_noimage_thumb.png", class: "user__image"
                 .comment__list__content__message
                   = simple_format(comment.content)
                   .comment__list__content__message__icons
@@ -130,4 +131,4 @@
                 %i.fa.fa-comment コメントする
       .item__show__main__relatedeItems
         = link_to "#" do
-          = "#{@item.category.name}をもっと見る"
+          = "#{@category_parent.name}をもっと見る"
