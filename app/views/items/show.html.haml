@@ -7,22 +7,24 @@
         .item__photo
           .item__photo__content
             .item__photo__content__detail
+              - if @item.buyer_id.present?
+                .sold-tag
+                  .sold-tag__title sold out
               .item__photo__content__detail__main
-                = image_tag "#{@image.image}"
+                = image_tag "#{@image.image.url}", class: "owl__carousel__main show"
                 - @images[1..9].each do |image|
-                  = image_tag "#{image.image}"
+                  = image_tag "#{image.image.url}", class: "owl__carousel__main"
           .item__photo__sub
-            .item__photo__sub__size
-              = image_tag "#{@image.image}"
-              - @images[1..9].each do |image|
-                = image_tag "#{@image.image}"
+            = image_tag "#{@image.image.url}", class: "owl__carousel__sub active"
+            - @images[1..9].each do |image|
+              = image_tag "#{image.image.url}", class: "owl__carousel__sub"
         .item__price
           %span.item__price__main
             = "¥#{@item.price}"
           .item__price__detail
             %span (税込)
             %span 送料込み
-        - unless user_signed_in? && current_user.id == @item.user_id
+        - if user_signed_in? && !(current_user.id == @item.user_id) && !@item.buyer_id.present?
           .item__buy__btn
             = link_to "購入画面に進む", new_purchase_path
         .item__message
