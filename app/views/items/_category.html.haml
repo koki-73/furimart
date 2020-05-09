@@ -3,7 +3,7 @@
     = link_to item_path(item.id) do
       .images
         = image_tag item.item_images[0].image.url, class: "images__image"
-        - if item.buyer_id == '1'
+        - if item.buyer_id.present?
           .sold-tag
             .sold-tag__title sold out
       .box
