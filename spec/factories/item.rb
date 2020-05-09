@@ -7,7 +7,6 @@ FactoryBot.define do
     name                    {"test"}
     price                   {"1000"}
     status                  {"1"}
-    category_id             {"195"}
     delivery_method         {"1"}
     delivery_from_location  {"10"}
     item_explanation        {"テスト"}
