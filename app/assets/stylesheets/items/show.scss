@@ -30,7 +30,7 @@
                 left: 0;
                 border-top: 150px solid #ea352d;
                 border-right: 150px solid transparent;
-                z-index: 100;
+                z-index: 1;
                 &__title {
                   font-size: 20px;
                   color: #fff;
@@ -38,7 +38,7 @@
                   position: absolute;
                   top: -138px;
                   left: 18px;
-                  z-index: 150;
+                  z-index: 2;
                   font-weight: 600;
                 }
               }
