@@ -16,4 +16,15 @@ class Item < ApplicationRecord
   belongs_to_active_hash :item_delivery_method
   belongs_to_active_hash :item_prefecture
   belongs_to_active_hash :item_preparation_day
+  
+  with_options presence: true do
+    validates :name
+    validates :price
+    validates :status
+    validates :delivery_method
+    validates :delivery_from_location
+    validates :item_explanation
+    validates :preparation_day
+    validates :delivery_fee
+  end
 end
