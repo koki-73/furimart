@@ -24,15 +24,11 @@
             %form.buy__form
               .buy__price__table
                 .buy__price__label 支払い金額
-                .buy__price__cell ¥
                 .buy__price__2
-                  = @item.price
+                  = "¥#{@item.price}"
               .buy__method
                 支払い方法
               - if CreditCard.find_by(user: current_user)
-                .buy__title
-                  -# = "**** **** **** " + @default_card_information.last4
-                  -# = image_tag "seq-card.png"
               - else
                 = link_to new_credit_card_path, class: "link-btn" do
                   登録して下さい
@@ -40,16 +36,15 @@
                 %h3 配送先
                 .buy_ship
                   = "〒#{Profile.find_by(user: current_user).post_code}"
-                  = Profile.find_by(user: current_user).prefecture
-                  = Profile.find_by(user: current_user).city
-                  = Profile.find_by(user: current_user).address
-                  = Profile.find_by(user: current_user).bullding
-                = link_to "#" do
-                  %p.buy__user__info__text
-                    %i.far.fa-plus-square
-                      %span 登録してください
+                  .buy_address
+                    = Profile.find_by(user: current_user).prefecture
+                    = Profile.find_by(user: current_user).city
+                    = Profile.find_by(user: current_user).address
+                    = Profile.find_by(user: current_user).bullding
+                    .buyer_2name
+                      = User.find_by(id: current_user).family_name
+                      = User.find_by(id: current_user).first_name
                 .buy_mation
                 - if CreditCard.find_by(user: current_user)
-                  %button.buyBtn{type: "submit"} 購入する
-                .wwww
-                  -# = button_to '購入する', {controller: 'purchases', action: 'update'}
+                  .btn_box
+                    = link_to "購入する", pay_item_purchases_path(@item), method: :put
