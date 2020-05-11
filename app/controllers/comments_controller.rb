@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     else
       @item = Item.find(@comment.item.id)
       @comments = @item.comments.includes(:user)
-      @category_grandchild = Category.find(@item.category_id)
+      @category_grandchild = Category.find(@item.category)
       @category_child = @category_grandchild.parent
       @category_parent = @category_child.parent
       render template: "items/show"
