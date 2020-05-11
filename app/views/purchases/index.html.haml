@@ -28,23 +28,23 @@
                   = "¥#{@item.price}"
               .buy__method
                 支払い方法
-              - if CreditCard.find_by(user: current_user)
+              - if @CreditCard
               - else
                 = link_to new_credit_card_path, class: "link-btn" do
                   登録して下さい
               .buy__shipping
                 %h3 配送先
-                .buy_ship
-                  = "〒#{Profile.find_by(user: current_user).post_code}"
-                  .buy_address
-                    = Profile.find_by(user: current_user).prefecture
-                    = Profile.find_by(user: current_user).city
-                    = Profile.find_by(user: current_user).address
-                    = Profile.find_by(user: current_user).bullding
-                    .buyer_2name
-                      = User.find_by(id: current_user).family_name
-                      = User.find_by(id: current_user).first_name
-                .buy_mation
-                - if CreditCard.find_by(user: current_user)
-                  .btn_box
+                .buy__ship
+                  = "〒#{@profile.post_code}"
+                  .buy__address
+                    = @profile.prefecture
+                    = @profile.city
+                    = @profile.address
+                    = @profile.bullding
+                    .buyer__name
+                      = @User.family_name
+                      = @User.first_name
+                .buy__mation
+                - if @CreditCard
+                  .btn__box
                     = link_to "購入する", pay_item_purchases_path(@item), method: :put

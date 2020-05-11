@@ -80,7 +80,6 @@ gem 'payjp'
 gem 'fog-aws'
 gem 'active_hash'
 
-
 group :production do
   gem 'unicorn'
 end

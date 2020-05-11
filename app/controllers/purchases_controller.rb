@@ -5,6 +5,9 @@ class PurchasesController < ApplicationController
   require "payjp"
   
   def index
+    @profile = Profile.find_by(user: current_user)
+    @CreditCard = CreditCard.find_by(user: current_user)
+    @User = User.find(current_user.id)
   end
   
   def pay

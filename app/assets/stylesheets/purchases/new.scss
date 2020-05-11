@@ -24,7 +24,7 @@
         padding: 24px 16px;
         border-top: 1px solid #f5f5f5;
         text-align: center;
-        &__item{
+        &__item {
           max-width: 343px;
           margin: 0 auto;
           .buy__item__box {
@@ -46,9 +46,9 @@
                 line-height: 1.5;
                 text-align: left;
               }
-              .buy__item__box__detail2{
+              .buy__item__box__detail2 {
                 display: flex;
-                .buy__icon{
+                .buy__icon {
                   font-size: 13px;
                   margin-top: 1px;
                 }
@@ -57,9 +57,9 @@
                   font-size: 12px;
                   font-weight: bold;
                 }
-                .buy__item_tax__price{
+                .buy__item_tax__price {
                   display: flex;
-                  .buy__tax{
+                  .buy__tax {
                     font-size: 12px;
                     margin-left: 5px;
                     margin-right: 5px;
@@ -72,7 +72,6 @@
             }
           }
 
-          
           .buy__form {
             padding-bottom: 35px;
             .buy__price__table {
@@ -84,7 +83,6 @@
               font-weight: bold;
               .buy__price__table {
                 .buy__price__label {
-                  padding: 0;
                 }
               }
             }
@@ -104,13 +102,13 @@
               width: 343px;
               border-bottom: 1px solid #f5f5f5;
               padding: 24px 0;
-              .buy_ship {
+              .buy__ship {
                 font-size: 14px;
                 text-align: left;
                 font-weight: bold;
               }
             }   
-            .btn_box {
+            .btn__box {
               width:100%;
               a {
                 display: block;
