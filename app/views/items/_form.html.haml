@@ -10,7 +10,6 @@
           %h3.form__box__image
             最大10枚までアップロードできます
         .form__box__area#image-box
-          -# #image-box
           #previews
             - if item.persisted?
               - item_images.each_with_index do |image, idx|
@@ -23,7 +22,6 @@
             .new-wrapper__main__image-field
               .new-wrapper__main__image-field__texts
                 %i{class: "fas fa-camera",id: "camera-icon"}
-                -# .new-wrapper__main__image-field__texts__text
                 クリックしてファイルをアップロード
               = form.fields_for :item_images do |i|
                 .js-file-group{ data: {index: "#{i.index}"} }
