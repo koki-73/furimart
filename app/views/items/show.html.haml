@@ -2,88 +2,120 @@
   .item__show__main
     .item__show__main__content
       .item__show__main__content__detail
-        %h1.item__name プラダ  リュック  レッド
+        %h1.item__name 
+          = @item.name
         .item__photo
-          %ul
-            %li
-              = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-              %ul
-                %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-                %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-                %li 
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
+          .item__photo__content
+            .item__photo__content__detail
+              - if @item.buyer_id.present?
+                .sold-tag
+                  .sold-tag__title sold out
+              .item__photo__content__detail__main
+                = image_tag "#{@image.image.url}", class: "owl__carousel__main show"
+                - @images[1..9].each do |image|
+                  = image_tag "#{image.image.url}", class: "owl__carousel__main"
+          .item__photo__sub
+            = image_tag "#{@image.image.url}", class: "owl__carousel__sub active"
+            - @images[1..9].each do |image|
+              = image_tag "#{image.image.url}", class: "owl__carousel__sub"
         .item__price
-          %span.item__price__main ￥8800
+          %span.item__price__main
+            = "¥#{@item.price}"
           .item__price__detail
             %span (税込)
             %span 送料込み
-        .item__message 美味しい料理。フルコース。
+        - if user_signed_in? && !(current_user.id == @item.user_id) && !@item.buyer_id.present?
+          .item__buy__btn
+            = link_to "購入画面に進む", new_purchase_path
+        .item__message
+          = @item.item_explanation
         .item__table
           %table{border: "1"}
             %tr 
               %th 出品者
               %td 
-                = link_to "メン", "#"
+                = link_to "#" do
+                  = @item.user.nickname
                 %br
                 %i.fas.fa-laugh
-                %span 10
+                %span
+                  - good_rates = UserRate.where(user_id: @item.user.id, rate: "good").length
+                  = "#{good_rates}"
                 %i.fas.fa-meh
-                %span 10
+                %span
+                  - normal_rates = UserRate.where(user_id: @item.user.id, rate: "normal").length
+                  = "#{normal_rates}"
                 %i.fas.fa-frown
-                %span 10
+                %span
+                  - bad_rates = UserRate.where(user_id: @item.user.id, rate: "bad").length
+                  = "#{bad_rates}"
             %tr 
               %th カテゴリー
               %td
-                = link_to "メンズ", "#" 
+                = link_to "#" do
+                  = @category_parent.name
                 %br
-                = link_to "バッグ", "#" 
+                = link_to "#" do
+                  = @category_child.name
                 %br
-                = link_to "リュック", "#" 
+                = link_to "#" do
+                  = @category_grandchild.name
             %tr 
               %th ブランド
-              %td  
-                = link_to "プラダ", "#"
+              %td
+                - if @item.brand.present?
+                  = link_to "#" do
+                    = @item.brand
             %tr 
               %th 商品のサイズ
-              %td 
+              %td
+                - if @item.size.present?
+                  = Size.find(@item.size_id).name
             %tr 
               %th 商品の状態
-              %td 傷や汚れあり
+              %td
+                = ItemStatus.find(@item.status).status
             %tr 
               %th 配送料の負担
-              %td 送料込み(出品者負担)
+              %td
+                = ItemDeliveryFee.find(@item.delivery_fee).payer
             %tr 
               %th 配送の方法
-              %td らくらくメルカリ便
+              %td
+                = ItemDeliveryMethod.find(@item.delivery_method).way
             %tr 
               %th 配送元地域
               %td 
-                = link_to "愛知県", "#"
+                = ItemPrefecture.find(@item.delivery_from_location).name
             %tr 
               %th 発送日の目安
-              %td 1~2日で発送
+              %td
+                = ItemPreparationDay.find(@item.preparation_day).days
         .optionalArea
-          %ul.star__btn
-            %li.star__btn__detail
-              %i.fa.fa-star 
+          .heart__btn
+            .heart__btn__detail
+              %i.far.fa-heart
               お気に入り 0
-          %ul.flag__btn
-            %li.flag__btn__detail
+          .flag__btn
+            .flag__btn__detail
               = link_to "#" do
                 %i.fa.fa-flag
                 不適切な商品の通報
+      - if user_signed_in? && current_user.id == @item.user_id
+        .item__show__main__content__box
+          .box__my__btn
+            = link_to "商品の編集", "#", class: "edit__btn"
+            = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "delete__btn"
       .item__show__main__content__comment
         .comment__content
           .comment__list
             - @comments.each do |comment| 
               .comment__list__content
                 .comment__list__content__user
-                  = link_to "item_path{comment.item.id}", class: "user__nickname" do
-                    = comment.user.nickname
-                  = link_to "item_path{comment.item.id}" do
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "user__image"
+                  = link_to my_pages_path{comment.user_id}, class: "user__nickname" do
+                    = User.find{@item.user_id}.nickname
+                  = link_to my_pages_path{comment.user_id} do
+                    = image_tag "member_photo_noimage_thumb.png", class: "user__image"
                 .comment__list__content__message
                   = simple_format(comment.content)
                   .comment__list__content__message__icons
@@ -99,14 +131,6 @@
                 不快な言葉遣いなどは利用制限や退会処分となることがあります
               = f.button type: "subnit", class: "commentBtn" do
                 %i.fa.fa-comment コメントする
-    %ul.item__show__main__links
-      %li
+      .item__show__main__relatedeItems
         = link_to "#" do
-          %i.fa.fa-angle-left
-          %span 前の商品
-      %li
-        = link_to "#" do
-          %span 後ろの商品
-          %i.fa.fa-angle-right
-    .item__show__main__relatedeItems
-      = link_to "メンズをもっと見る", "#" 
+          = "#{@category_parent.name}をもっと見る"

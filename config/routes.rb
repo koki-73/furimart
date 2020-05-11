@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+
   resources :items, only: [:index, :show, :new, :create, :edit, :destroy] do
     resources :purchases, only: :index do
       collection do
         put 'pay', to: 'purchases#pay'
       end
     end
+
+  resources :items do
     resources :comments, only: :create
     collection do
       get 'get_category_children', defaults: { format: 'json' }
