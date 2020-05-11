@@ -41,7 +41,16 @@ class ItemsController < ApplicationController
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end
-  
+
+  def destroy
+    item = Item.find(params[:id])
+    if user_signed_in? && item.user_id == current_user.id
+      item.destroy
+      redirect_to root_path
+    else
+      render "show"
+    end
+  end
   private
   def child_params
     params.permit(:child_id)
