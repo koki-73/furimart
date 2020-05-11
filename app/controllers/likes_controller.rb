@@ -1,9 +1,9 @@
 class LikesController < ApplicationController
   before_action :set_item, only: [:create, :destroy]
   def create
-    @item(user_id) = current_user.id
-    @like = current_user.likes.create(params[:item_id])
+    @like = Like.create(user_id: current_user.id, item_id: params[:item_id])
     redirect_to items_path(@item)
+    
   end
 
   def destory
