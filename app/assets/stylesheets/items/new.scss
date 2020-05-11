@@ -25,7 +25,7 @@
           margin-left: 125px;
         }
       }
-      .new-wrapper__main__preview,.new-wrapper__main__preview-first {
+      .new-wrapper__main__preview, .new-wrapper__main__preview-first {
         margin: 16px 0;
         display: flex;
         flex-wrap: wrap;
@@ -226,5 +226,30 @@
       margin-top: 5px;
       text-align: center;
     }
+  }
+}
+
+#previews {
+  display: grid;
+  grid-template-rows: 187px 187px;
+  grid-template-columns: 131px 131px 131px 131px 131px;
+  justify-content: flex-start;
+  .delete-icon {
+    width: 50px;
+  }
+  .edit-btn span {
+    cursor: pointer;
+  }
+}
+.form__box__area#image-box {
+  position: relative;
+  .js-file-group {
+    display: none;
+  }
+  label {
+    position: absolute;
+    top: 400px;
+    right: 180px;
+    text-align: center;
   }
 }

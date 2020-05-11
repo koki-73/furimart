@@ -1,0 +1,160 @@
+.items-new-wrapper
+  .form__area
+    = form_for item do |form|
+      .form__content__image
+        %h5.form__title
+          出品画像
+        %span.required__text
+          必須
+        .form-box
+          %h3.form__box__image
+            最大10枚までアップロードできます
+        .form__box__area#image-box
+          -# #image-box
+          #previews
+            - if item.persisted?
+              - item_images.each_with_index do |image, idx|
+                .new-wrapper__main__preview__image
+                  = image_tag image.image.url, data:{ index: idx }, width: "131", height: '160'
+                  .edit-btn
+                    = icon('far', 'times-circle', class: "delete-icon", data:{ index: idx })
+                    %span{ data: {index: "#{idx}"} }
+          %label{id: "image-wrapper", action: request.path}
+            .new-wrapper__main__image-field
+              .new-wrapper__main__image-field__texts
+                %i{class: "fas fa-camera",id: "camera-icon"}
+                -# .new-wrapper__main__image-field__texts__text
+                クリックしてファイルをアップロード
+              = form.fields_for :item_images do |i|
+                .js-file-group{ data: {index: "#{i.index}"} }
+                  = i.file_field :image, {class: "js-file"}
+                - if item.persisted?
+                  = i.check_box :_destroy, data:{ index: i.index }, class: "hidden-destroy"
+              - if item.persisted?
+                .js-file-group{ data: {index: "#{item_images.count}"} }
+                  = file_field_tag :item, name: "item[item_images_attributes][#{item_images.count}][image]", class: 'js-file', id: "item_item_images_attributes_#{item_images.count}_image"
+        .form__content
+          %h5.form__title
+            商品名
+          %span.required__text
+            必須
+          .items-new__page__main__name__form
+            = form.text_field :name, placeholder: "40文字まで", class: "items-new__page__main__name__form__bar"
+        .form__content
+          %h5.form__title
+            商品説明
+          %span.required__text
+            必須
+          .items-new__page__main__explanation__form
+            = form.text_area :item_explanation, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、定価、注意点など)例)2010年頃に一万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "items-new__page__main__name__form__bar"
+          .text__count
+            %span 0/1000
+        .form__detail
+          商品の詳細
+        .listing-form-box
+          .listing-product-detail__category
+            = form.label 'カテゴリー', class: 'listing-default__label'
+            %span.required__text
+              必須
+            - if item.category_id.nil?
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  .listing-select-wrapper__box--select
+                    = form.collection_select :category_id, category_parent_array, :id, :name, prompt: "---"
+                    .arrow-icon
+                      = icon('fas', 'chevron-down', class: "arrow-icon")
+            - else
+              .listing-select-wrapper
+                .listing-select-wrapper__box
+                  .listing-select-wrapper__box--select
+                    = form.collection_select :category_id, category_parent_array, :id, :name, prompt: "---", selected: category_parent
+                    .arrow-icon
+                      = icon('fas', 'chevron-down', class: "arrow-icon")
+              .listing-select-wrapper__added#children_wrapper
+                .listing-select-wrapper__box
+                  .listing-select-wrapper__box--select
+                    = form.collection_select :category_id, category_children, :id, :name, prompt: "---", selected: category_child
+                    .arrow-icon
+                      = icon('fas', 'chevron-down', class: "arrow-icon")
+              .listing-select-wrapper__added#grandchildren_wrapper
+                .listing-select-wrapper__box
+                  .listing-select-wrapper__box--select
+                    = form.collection_select :category_id, category_grandchildren, :id, :name, prompt: "---"
+                    .arrow-icon
+                      = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            ブランド
+          %span.any__text
+            任意
+          .items-new__brand__main__name__form
+            = form.text_field :brand, placeholder: "例）シャネル", class: "items-new__brand__main__name__form__bar"  
+        .form__content
+          %h5.form__title
+            商品の状態
+          %span.required__text
+            必須
+          .item_new_brand_text
+            = form.collection_select :status, ItemStatus.all, :id, :status, prompt: "---"
+            .arrow-icon
+              = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__delivery
+          配送について
+        .form__content
+          %h5.form__title
+            配送料の負担
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :delivery_fee, ItemDeliveryFee.all, :id, :payer, prompt: "---"
+          .arrow-icon
+            = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            配送の方法
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :delivery_method, ItemDeliveryMethod.all, :id, :way, prompt: "---"
+          .arrow-icon
+            = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            発送元の地域
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :delivery_from_location, ItemPrefecture.all, :id, :name, prompt: "---"
+          .arrow-icon
+            = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__content
+          %h5.form__title
+            発送までの日数
+          %span.required__text
+            必須
+        .item_new_brand_text
+          = form.collection_select :preparation_day, ItemPreparationDay.all, :id, :days, prompt: "---"
+          .arrow-icon
+            = icon('fas', 'chevron-down', class: "arrow-icon")
+        .form__price
+          .form__price__head
+            %h5.form__title
+              販売価格
+            %span.required__text
+              必須
+          .form__price__box
+            %span.jpy__icon ¥
+            = form.text_field :price, placeholder: "0", class: "items-new__brand__main__name__form__bar", id: "price-form"
+        .fee
+          販売手数料（10%）
+        .profit
+          %h1.profit__text 
+            販売利益 
+          .profit__price
+            0円
+        .submit-btn
+          = form.submit "更新する", class: "exhibit-btn"
+        .submit-btn
+          = form.submit "下書きに保存", class: "draft-btn"
+        .item__back
+          = link_to "戻る", :back
