@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.item_images
     @image = @images.first
-    @category_grandchild = Category.find(@item.category)
+    @category_grandchild = Category.find(@item.category_id)
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
     @comment = Comment.new
