@@ -13,9 +13,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
-  namespace :api do
-    resources :items, only: :update, defaults: { format: 'json' }
-  end
+
   resources :users, only: :show
   resources :my_pages, only: :index
   resources :categories, only: :show
