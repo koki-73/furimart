@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_many :user_rates
   belongs_to :user
   belongs_to :category
+
   belongs_to :size, optional: true
   belongs_to :buyer, class_name: "User", optional: true
   accepts_nested_attributes_for :item_images, allow_destroy: true

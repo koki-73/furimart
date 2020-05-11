@@ -33,6 +33,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @images = @item.item_images
+    @image = @images.first
+    @category_grandchild = Category.find(@item.category)
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end
