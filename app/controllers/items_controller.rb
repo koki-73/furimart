@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   
+  before_action :set_item, only: [:edit, :update]
+
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
@@ -13,7 +15,6 @@ class ItemsController < ApplicationController
     @images = ItemImage.where(item_id: params[:id])
   end
   
-
   def index
   end
 
@@ -37,7 +38,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @category_parent_array = Category.where(ancestry: nil)
     @item_images = ItemImage.where(item_id: @item.id)
     @category_grandchild = Category.find(@item.category_id)
@@ -48,7 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     @item_images = ItemImage.where(item_id: @item.id)
 
     image_form_count = item_params_update[:item_images_attributes].to_hash.length
@@ -89,6 +88,10 @@ class ItemsController < ApplicationController
   def item_params_update
     category_id = params.permit(:category_id)
     params.require(:item).permit(:name, :price, :item_explanation, :status, :brand, :delivery_fee, :delivery_method, :delivery_from_location, :preparation_day, :price, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id).merge(category_id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
