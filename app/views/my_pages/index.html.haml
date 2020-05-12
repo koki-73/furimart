@@ -1,15 +1,16 @@
 .mypage-container.clearfix
   .mypage-main-content
     %section.mypage-user-icon
-      = link_to "#" do
+      = link_to my_pages_path do
         .mypage-user-photo
           = image_tag('member_photo_noimage_thumb.png',  height: '60px', width: '60px')
-        %h2.user-name name
+        %h2.user-name
+          = @user.nickname
         .mypage-score
           %span
-            = "評価  ##"
+            = "評価  #{@rates}"
           %span
-            = "出品数  ##"
+            = "出品数  #{@items}"
     %section.mypage-tab-notification-todo
       %ul.mypage-tabs
         %li.active
@@ -84,6 +85,6 @@
   
   = render partial: 'side_bar', locals: {card: @card}
 
-= link_to "#", class: "sell-btn" do
+= link_to new_item_path, class: "sell-btn" do
   %div 出品する
   = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"

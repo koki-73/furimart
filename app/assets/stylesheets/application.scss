@@ -1,22 +1,21 @@
 @import "reset";
-@import "modules/mixin";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "owl.carousel";
 @import "owl.theme.default";
+@import "devise/new";
+@import "devise/login";
+@import "modules/mixin";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/credit-pages";
 @import "modules/header2";
 @import "modules/footer2";
-@import "items/index";
-@import "devise/new";
-@import "devise/login";
 @import "modules/user-show";
 @import "modules/mypage-index";
+@import "items/index";
 @import "items/show";
 @import "items/new";
-
 @import "purchases/new";
 @import "purchases/pay";
 
