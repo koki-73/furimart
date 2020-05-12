@@ -112,7 +112,7 @@
         .item__show__main__content__box
           .box__my__btn
             = link_to "商品の編集", "#", class: "edit__btn"
-            = link_to "この商品を削除する", "#", class: "delete__btn"
+            = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "delete__btn"
       .item__show__main__content__comment
         .comment__content
           .comment__list

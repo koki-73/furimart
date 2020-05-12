@@ -1,12 +1,10 @@
 class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
-  has_many :likes
-  has_many :liked_users, through: :likes, source: :user
+  has_many :likes, dependent: :destroy
   has_many :item_images, dependent: :destroy
-  has_many :user_rates
+  has_many :user_rates, dependent: :destroy
   belongs_to :user
   belongs_to :category
-
   belongs_to :size, optional: true
   belongs_to :buyer, class_name: "User", optional: true
   accepts_nested_attributes_for :item_images, allow_destroy: true
