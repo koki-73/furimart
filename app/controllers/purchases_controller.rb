@@ -6,9 +6,16 @@ class PurchasesController < ApplicationController
   
   def index
     @profile = Profile.find_by(user: current_user)
-    @CreditCard = CreditCard.find_by(user: current_user)
-    @User = User.find(current_user.id)
-    @item = Item.find(params[:item_id])
+    @creditcard = CreditCard.find_by(user: current_user)
+    @user = User.find(current_user.id)
+    if @creditcard
+      customer = Payjp::Customer.create
+      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = CreditCard.find_by(user_id: current_user.id)
+      Payjp.api_key = Rails.application.credentials[:payjp][:PAYJP_SECRET_KEY]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
   end
 
   def pay

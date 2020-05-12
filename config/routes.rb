@@ -3,11 +3,12 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items, only: [:index, :show, :new, :create, :edit, :destroy] do
-    resources :purchases, only: :index do
+    resources :purchases, only: [:index, :show] do
       collection do
         put 'pay', to: 'purchases#pay'
       end
     end
+  end
 
   resources :items do
     resources :comments, only: :create
