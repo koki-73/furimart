@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   
   before_action :set_item, only: [:edit, :update]
-
+  
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
   end
@@ -10,12 +10,14 @@ class ItemsController < ApplicationController
     child_id = child_params[:child_id]
     @category_grandchildren = Category.find(child_id).children 
   end
-
+  
   def set_images
     @images = ItemImage.where(item_id: params[:id])
   end
-  
+
   def index
+    @items = Item.includes(:item_images).order("id DESC").limit(3)
+    @items_brand = Item.where(brand: "nike").includes(:item_images).order("id DESC").limit(3)
   end
 
   def new
@@ -71,10 +73,23 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @images = @item.item_images
+    @image = @images.first
+    @category_grandchild = Category.find(@item.category_id)
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
   end
-  
+
+  def destroy
+    item = Item.find(params[:id])
+    if user_signed_in? && item.user_id == current_user.id && item.destroy
+      redirect_to root_path
+    else
+      render "show"
+    end
+  end
   private
   def child_params
     params.permit(:child_id)

@@ -79,7 +79,7 @@ gem 'ancestry'
 gem 'payjp'
 gem 'fog-aws'
 gem 'active_hash'
-
+gem 'owlcarousel-rails'
 group :production do
   gem 'unicorn'
 end
