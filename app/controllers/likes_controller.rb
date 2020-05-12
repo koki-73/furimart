@@ -1,15 +1,17 @@
 class LikesController < ApplicationController
   before_action :set_item, only: [:create, :destroy]
+  def index
+  end
+  
   def create
-    @like = Like.create(user_id: current_user.id, item_id: params[:item_id])
-    redirect_to items_path(@item)
-    
+    current_user.likes.create(item_id: params[:item_id])
+    redirect_to item_path(@item)
   end
 
-  def destory
-    @like = Like.find_by(item_id: params[:item_id], user_id: current_user.id)
-    @like.destory
-    redirect_to items_path(@item)
+  def destroy
+    like = Like.find_by(item_id: params[:item_id], user_id: current_user.id)
+    like.destroy
+    redirect_to item_path(@item)
   end
 
   private

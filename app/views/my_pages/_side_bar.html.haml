@@ -14,8 +14,8 @@
           やることリスト
           = icon('fas', 'chevron-right', class: "arrow-icon") 
       %li
-        = link_to "#", class: "list-item" do
-          いいね一覧
+        = link_to "いいね一覧", item_likes_path, method: :get, class: "list-item" do
+          
           = icon('fas', 'chevron-right', class: "arrow-icon") 
       %li
         = link_to "#", class: "list-item" do
