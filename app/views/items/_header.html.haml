@@ -2,16 +2,16 @@
   .header__content
     .header__content__menu
       = link_to image_tag('logo.png',  height: '40px', width: '140px', class: 'header__content__menu__title'),root_path
-      = form_with(url: "#", local: true, method: :get, class: "header__content__menu__search_form") do |form|
-        .input_box
-          = form.text_field :keyword, placeholder: "キーワードで探す", class: "input_box__form"
-          %button{type: "submit",class: 'search_btn'}
+      = form_with(url: "#", local: true, method: :get, class: "header__content__menu__search-form") do |form|
+        .input-box
+          = form.text_field :keyword, placeholder: "キーワードで探す", class: "input-box__form"
+          %button{type: "submit",class: 'search-btn'}
             = image_tag 'icon-search 1.png',size: "20x20"
     .header__content__bottom
-      .left_lists
-        .left_lists__category
+      .left-lists
+        .left-lists__category
           = image_tag('icon_category.png', height: '20px', width: '20px', class: 'category')
-          = link_to "カテゴリーから探す", '#', class: 'category_title'
+          = link_to "カテゴリーから探す", '#', class: 'category-title'
         %ul.category-box
           %li.category-box__category-parent#category-parent-1
             = link_to "レディース", category_path(1), class: "category-box__category-parent__link"
@@ -39,41 +39,15 @@
             = link_to "自動車・オートバイ", category_path(12), class: "category-box__category-parent__link"
           %li.category-box__category-parent#category-parent-13
             = link_to "その他", category_path(13), class: "category-box__category-parent__link"
-        .left_lists__brands
+        .left-lists__brands
           = image_tag('icon_brand.png',height: '20px', width: '20px', class: 'brand')
-          = link_to "ブランドから探す", '#',class: 'brand_title'
-      .right_lists
+          = link_to "ブランドから探す", '#',class: 'brand-title'
+      .right-lists
         - if user_signed_in?
-          .user_btn
-            = link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'login_btn'
+          .user-btn
+            = link_to "マイページ", my_pages_path, class: 'mypage-link'
+            = link_to "ログアウト", destroy_user_session_path, method: :delete , class: 'login-btn'
         - else
-          .user_btn
-            = link_to "新規会員登録", '/users/sign_up', class: 'sign_up_btn'
-            = link_to "ログイン", '/users/sign_in', class: 'login_btn'
-    -# %ul.category-box
-    -#   %li.category-box__category-parent#category-parent-1
-    -#     = link_to "レディース", category_path(1), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-2
-    -#     = link_to " メンズ", category_path(2), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-3
-    -#     = link_to "ベビー・キッズ", category_path(3), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-4
-    -#     = link_to "インテリア・住まい・小物", category_path(4), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-5
-    -#     = link_to "本・音楽・ゲーム", category_path(5), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-6
-    -#     = link_to "おもちゃ・ホビー・グッズ", category_path(6), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-7
-    -#     = link_to "コスメ・香水・美容", category_path(7), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-8
-    -#     = link_to "家電・スマホ・カメラ", category_path(8), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-9
-    -#     = link_to "スポーツ・レジャー", category_path(9), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-10
-    -#     = link_to "ハンドメイド", category_path(10), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-11
-    -#     = link_to "チケット", category_path(11), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-12
-    -#     = link_to "自動車・オートバイ", category_path(12), class: "category-box__category-parent__link"
-    -#   %li.category-box__category-parent#category-parent-13
-    -#     = link_to "その他", category_path(13), class: "category-box__category-parent__link"
+          .user-btn
+            = link_to "新規会員登録", '/users/sign_up', class: 'signup-btn'
+            = link_to "ログイン", '/users/sign_in', class: 'login-btn'
