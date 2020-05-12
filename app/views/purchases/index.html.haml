@@ -5,7 +5,7 @@
         %h1.purchase__name 購入内容の確認
         .buy__content
           .buy__content__item
-            .buy__item__box              
+            .buy__item__box
               .buy__item__box__detail
                 %p.buy__name 
                   = @item.name
@@ -13,10 +13,10 @@
                   %p.buy__icon ¥
                   %p.buy__price
                     = @item.price
-                  .buy__item_tax__price
-                    %span.buy__tax (税込)
-                    %span.buy__fee
-                      = @item.delivery_method
+                  %span.buy__tax (税込)
+                .buy__item-tax__price
+                  %span.buy__fee
+                    = ItemDeliveryFee.find(@item.delivery_fee).payer
         .buy__content
           .buy__content__item
             %form.buy__form
@@ -26,7 +26,7 @@
                   = "¥#{@item.price}"
               .buy__method
                 支払い方法
-              - if @creditcard
+              - if @card
                 .card-number
                   = "**** **** **** " + @default_card_information.last4
                 .card-expire

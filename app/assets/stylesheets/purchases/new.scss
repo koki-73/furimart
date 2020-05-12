@@ -44,7 +44,7 @@
                 font-size: 14px;
                 padding: 0 0 8px;
                 line-height: 1.5;
-                text-align: left;
+                text-align: center;
               }
               .buy__item__box__detail2 {
                 display: flex;
@@ -57,18 +57,17 @@
                   font-size: 12px;
                   font-weight: bold;
                 }
-                .buy__item_tax__price {
-                  display: flex;
-                  .buy__tax {
-                    font-size: 12px;
-                    margin-left: 5px;
-                    margin-right: 5px;
-                  }
-                  .buy__fee {
-                    font-size: 12px;
-                  }
+                .buy__tax {
+                  font-size: 12px;
+                  margin-left: 5px;
+                  margin-right: 5px;
                 }
               }
+              .buy__item-tax__price {
+                .buy__fee {
+                  font-size: 12px;
+                }
+              } 
             }
           }
 
