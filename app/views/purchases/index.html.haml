@@ -42,10 +42,10 @@
                   .buy__ship
                     = "〒#{@profile.post_code}"
                     .buy__address
-                      = @profile.prefecture
+                      = ItemPrefecture.find(@profile.prefecture_id).name
                       = @profile.city
                       = @profile.address
-                      = @profile.bullding
+                      = @profile.building
                       .buyer__name
                         = @user.family_name
                         = @user.first_name

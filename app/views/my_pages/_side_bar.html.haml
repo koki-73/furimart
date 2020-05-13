@@ -25,18 +25,14 @@
         設定
     %ul.mypage-nav-list
       %li
-        - if @user.profile
-          = link_to edit_profile_path(@user.id), class: "list-item" do
-            プロフィール
+        - if current_user.profile
+          = link_to edit_profile_path(current_user.id), class: "list-item" do
+            プロフィール情報
             = icon('fas', 'chevron-right', class: "arrow-icon")
         - else
           = link_to new_profile_path, class: "list-item" do
-            プロフィール
+            プロフィール情報
             = icon('fas', 'chevron-right', class: "arrow-icon")
-      %li
-        = link_to "#", class: "list-item" do
-          発送元・お届け先住所変更
-          = icon('fas', 'chevron-right', class: "arrow-icon")
       %li
         = link_to credit_cards_path, class: "list-item" do
           支払い方法
