@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     end
   end
   resources :purchases, only: [:new, :create]
+  resources :profiles, only: [:new, :create, :edit, :update]
 end

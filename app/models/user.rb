@@ -22,5 +22,6 @@ class User < ApplicationRecord
   has_many :user_rates
   has_one :profile, dependent: :destroy
   has_one :credit_card, dependent: :destroy
+  # accepts_nested_attributes_for :profile
 
 end
