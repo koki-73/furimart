@@ -1,0 +1,13 @@
+.favorite
+  .favorite__title
+    %h1 お気に入り一覧
+  .favorite__list
+    - @likes.each do |like|
+      .favorite__list__data
+        = link_to "#", class: ".favorite__content" do
+          = image_tag like.item.item_images[0].image.url, class: "favorite__content__img"
+          .favorite__content__detail
+            .favorite__content__detail__name
+              = like.item.name
+            .favorite__content__detail__price
+              = like.item.price

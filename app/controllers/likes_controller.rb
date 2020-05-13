@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   before_action :set_item, only: [:create, :destroy]
   def index
+    @likes = Like.where(user_id: current_user.id)
   end
   
   def create

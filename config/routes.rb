@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items do
-    resources :likes, only: [:create, :destroy]
     resources :comments, only: :create
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+  resources :likes, only: [:index, :create, :destroy]
   resources :users, only: :show
   resources :my_pages, only: :index
   resources :categories, only: :show
