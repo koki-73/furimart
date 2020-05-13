@@ -49,7 +49,7 @@ describe Item do
       expect(item).to be_valid
     end
 
-    it "priceが9999999以上の場合は登録できないこと" do
+    it "priceが10,000,000以上の場合は登録できないこと" do
       user = create(:user)
       user_id = User.first.id
       category = create(:category)
@@ -59,7 +59,7 @@ describe Item do
       expect(item.errors[:price]).to include("は9999999以下の値にしてください")
     end
 
-    it "priceが9999999以上の場合は登録できること" do
+    it "priceが9999999以下の場合は登録できること" do
       user = create(:user)
       user_id = User.first.id
       category = create(:category)
