@@ -30,7 +30,7 @@
         - bad_rates = UserRate.where(user_id: @user.id, rate: "bad").length
         = "#{bad_rates}"
   .users-self-introduce-area
-    = "#{Profile.find_by(user_id: @user.id).introduction}"
+    = "#{Profile.find_by(user_id: @user.id)&.introduction}"
   .social-media-box
     = link_to "#", class: "facebook" do
       = icon('fab', 'facebook-square', class: "facebook-icon")
@@ -41,8 +41,11 @@
   .items-box-container
     %h2.items-box-head
       この出品者の商品
-    .items-box-content
-      = render partial: 'item', collection: @items
+    - if @items.present?
+      .items-box-content
+        = render partial: 'item', collection: @items
+    - else
+      %h2.no-items-msg 出品した商品はありません
 
   = link_to "#", class: "sell-btn" do
     %div 出品する
