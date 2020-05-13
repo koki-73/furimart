@@ -37,20 +37,27 @@
                 = link_to new_credit_card_path, class: "link-btn" do
                   クレジットカードを登録して下さい
               .buy__shipping
-                %h3 配送先
-                .buy__ship
-                  = "〒#{@profile.post_code}"
-                  .buy__address
-                    = @profile.prefecture
-                    = @profile.city
-                    = @profile.address
-                    = @profile.bullding
-                    .buyer__name
-                      = @user.family_name
-                      = @user.first_name
+                - if @profile
+                  %h3 配送先
+                  .buy__ship
+                    = "〒#{@profile.post_code}"
+                    .buy__address
+                      = @profile.prefecture
+                      = @profile.city
+                      = @profile.address
+                      = @profile.bullding
+                      .buyer__name
+                        = @user.family_name
+                        = @user.first_name
+                - else
+                  .buyer__name
+                    = @user.family_name
+                    = @user.first_name
+                  = link_to new_profile_path, class: "profile-link" do
+                    プロフィールを登録してください
                 .btn__box
                   - if @item.buyer_id.present? 
                     売り切れました
                   - else
                     - if @card
-                      = link_to "購入する", pay_item_purchases_path(@item), method: :put
+                      = link_to "購入する", pay_item_purchases_path(@item), method: :put, class: "purchases-btn"

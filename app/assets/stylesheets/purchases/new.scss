@@ -97,12 +97,21 @@
               width: 343px;
               border-bottom: 1px solid #f5f5f5;
               padding: 24px 0;
+              .profile-link {
+                display: block;
+                margin-top: 15px;
+                font-size: 16px;
+                align-content: center;
+                font-weight: bold;
+                text-decoration: none;
+                color: #0099e8;
+              }
               .buy__ship {
                 font-size: 14px;
                 text-align: left;
                 font-weight: bold;
               }
-              a {
+              .purchases-btn {
                 display: block;
                 margin: 24px 0;
                 border: 1px solid #888;
