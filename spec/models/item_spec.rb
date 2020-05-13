@@ -30,6 +30,25 @@ describe Item do
       expect(item.errors[:price]).to include("を入力してください")
     end
 
+    it "priceが300以上の場合は登録できること" do
+      user = create(:user)
+      user_id = User.first.id
+      category = create(:category)
+      category_id = Category.first.id
+      item = build(:item, user_id: user_id, category_id: category_id, price: "300")
+      expect(item).to be_valid
+    end
+
+    it "priceが9999999以上の場合は登録できないこと" do
+      user = create(:user)
+      user_id = User.first.id
+      category = create(:category)
+      category_id = Category.first.id
+      item = build(:item, user_id: user_id, category_id: category_id, price: "10000000")
+      item.valid?
+      expect(item.errors[:price]).to include("は9999999以下の値にしてください")
+    end
+
     it "statusがない場合は登録できないこと" do
       user = create(:user)
       user_id = User.first.id
