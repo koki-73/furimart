@@ -52,7 +52,6 @@ class ItemsController < ApplicationController
 
   def update
     @item_images = ItemImage.where(item_id: @item.id)
-
     image_form_count = item_params_update[:item_images_attributes].to_hash.length
     image_count = @item_images.length
     delete_image_count = 0

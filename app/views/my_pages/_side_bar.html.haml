@@ -25,9 +25,14 @@
         設定
     %ul.mypage-nav-list
       %li
-        = link_to "#", class: "list-item" do
-          プロフィール
-          = icon('fas', 'chevron-right', class: "arrow-icon")
+        - if @user.profile
+          = link_to edit_profile_path(@user.id), class: "list-item" do
+            プロフィール
+            = icon('fas', 'chevron-right', class: "arrow-icon")
+        - else
+          = link_to new_profile_path, class: "list-item" do
+            プロフィール
+            = icon('fas', 'chevron-right', class: "arrow-icon")
       %li
         = link_to "#", class: "list-item" do
           発送元・お届け先住所変更

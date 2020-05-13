@@ -26,4 +26,5 @@ Rails.application.routes.draw do
       get 'show', to: 'credit_cards#show'
     end
   end
+  resources :profiles, only: [:new, :create, :edit, :update]
 end

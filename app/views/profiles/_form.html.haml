@@ -1,0 +1,10 @@
+= form_with(model: @profile, local: true) do |f|
+  = f.text_field :post_code
+  = f.text_field :tel_number
+  = f.text_field :prefecture
+  = f.text_field :city
+  = f.text_field :address
+  = f.text_field :bullding
+  -# = f.file_field :image
+  = f.text_field :introduction
+  = f.submit
