@@ -52,4 +52,5 @@
                   - if @item.buyer_id.present? 
                     売り切れました
                   - else
-                    = link_to "購入する", pay_item_purchases_path(@item), method: :put
+                    - if @card
+                      = link_to "購入する", pay_item_purchases_path(@item), method: :put
