@@ -1,10 +1,38 @@
-= form_with(model: @profile, local: true) do |f|
-  = f.text_field :post_code, placeholder: "郵便番号"
-  = f.text_field :tel_number, placeholder: "電話番号"
-  = f.text_field :prefecture, placeholder: "都道府県"
-  = f.text_field :city, placeholder: "市町村区"
-  = f.text_field :address, placeholder: "番地"
-  = f.text_field :bullding, placeholder: "建物・マンション名"
-  -# = f.file_field :image
-  = f.text_field :introduction, placeholder: "自己紹介"
-  = f.submit
+.profile-container
+  .profile-content
+    %h2 プロフィール情報
+    = form_with(model: @profile, local: true, class: "profile-form") do |f|
+      .form-content
+        = f.label :郵便番号
+        %span.form-content__require 必須
+        = f.text_field :post_code, placeholder: "1002000"
+      .form-content
+        = f.label :電話番号
+        %span.form-content__option 任意
+        = f.text_field :tel_number, placeholder: "09012345678"
+      .form-content
+        = f.label :都道府県
+        %span.form-content__require 必須
+        = f.text_field :prefecture, placeholder: "東京都"
+      .form-content
+        = f.label :市区町村
+        %span.form-content__require 必須
+        = f.text_field :city, placeholder: "渋谷区"
+      .form-content
+        = f.label :番地
+        %span.form-content__require 必須
+        = f.text_field :address, placeholder: "１−１−１"
+      .form-content
+        = f.label :建物名
+        %span.form-content__option 任意
+        = f.text_field :bullding, placeholder: "建物・マンション名"
+        -# = f.file_field :image
+      .form-content
+        = f.label :自己紹介
+        %span.form-content__option 任意
+        = f.text_area :introduction, placeholder: "はじめまして。よろしくお願いします。"
+      .submit-area
+        - if Profile.find_by(user_id: current_user.id)
+          = f.button "登録する", type: "button", onclick: "submit();", class: "submit-btn"
+        - else
+          = f.button "変更する", type: "button", onclick: "submit();", class: "submit-btn"
