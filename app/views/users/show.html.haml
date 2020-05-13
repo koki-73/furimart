@@ -9,10 +9,10 @@
     .users-score
       %span
         - rates = UserRate.where(user_id: @user.id).length
-        = "評価#{rates}"
+        = "評価 #{rates}"
       %span
         - user_items = Item.where(user_id: @user.id).length
-        = "出品数#{user_items}"
+        = "出品数 #{user_items}"
   .users-rate-area
     .users-rate-area__good
       = icon('fas', 'laugh', class: "good-icon")
