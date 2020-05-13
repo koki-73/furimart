@@ -1,0 +1,29 @@
+.purchase__completed {
+  text-align: center;
+  .buy__done {
+    background-color: red;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25px;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .buy__done__box {
+    justify-content: center;
+    margin: 24px 0;
+    color:black;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .top__back {
+    a {
+      text-decoration: none;
+      color: #0099e8;
+    }
+  }
+}
