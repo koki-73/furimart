@@ -114,6 +114,5 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to root_path unless @item.user_id == current_user.id
   end
-
 end
->
+
