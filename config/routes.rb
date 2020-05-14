@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root 'items#index'
 
   resources :items do
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles, only: [:new, :create, :edit, :update]
+  get '*unmatched_route', to: 'application#rescue404'
 end
