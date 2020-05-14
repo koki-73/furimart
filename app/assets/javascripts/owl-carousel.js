@@ -3,7 +3,6 @@ $(function(){
   function imageSelect(){
     const index = mouses.index(this);
     var scrollvalue = -565 * index;
-    console.log(scrollvalue)
     $(".active").removeClass("active")
     $(this).addClass("active")
     $(".item__photo__content__detail__main").css("left", scrollvalue);
