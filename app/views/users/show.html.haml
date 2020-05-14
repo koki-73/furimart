@@ -1,7 +1,7 @@
 .users-details
   .users-detail-profile-box
     .users-detail-photo-box
-      = link_to "#" do
+      = link_to user_path(@user.id) do
         .users-detail-photo
           = image_tag('member_photo_noimage_thumb.png', height: '180px', width: '180px')
         %h2
@@ -47,6 +47,6 @@
     - else
       %h2.no-items-msg 出品した商品はありません
 
-  = link_to "#", class: "sell-btn" do
+  = link_to new_item_path, class: "sell-btn" do
     %div 出品する
     = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"
