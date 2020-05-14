@@ -92,7 +92,7 @@
               %td
                 = ItemPreparationDay.find(@item.preparation_day).days
         - if user_signed_in?
-          .optionalArea
+          .optional__Area
             - if current_user.already_liked?(@item)
               = button_to like_path, params: {item_id: @item.id}, method: :delete do
                 .heart__btn
