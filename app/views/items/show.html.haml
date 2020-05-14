@@ -120,9 +120,9 @@
             - @comments.each do |comment| 
               .comment__list__content
                 .comment__list__content__user
-                  = link_to user_path{comment.user_id}, class: "user__nickname" do
+                  = link_to user_path(comment.user_id), class: "user__nickname" do
                     = comment.user.nickname
-                  = link_to user_path{comment.user_id} do
+                  = link_to user_path(comment.user_id) do
                     = image_tag "member_photo_noimage_thumb.png", class: "user__image"
                 .comment__list__content__message
                   = simple_format(comment.content)
