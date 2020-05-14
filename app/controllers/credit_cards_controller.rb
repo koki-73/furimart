@@ -1,11 +1,12 @@
 class CreditCardsController < ApplicationController
 
   require "payjp"
+  before_action :move_to_top
 
   def new
     @user = current_user
     card = CreditCard.where(user_id: current_user.id)
-    redirect_to action: "index" if card.exists?
+    redirect_to action: "show" if card.exists?
   end
 
   def pay
@@ -50,5 +51,11 @@ class CreditCardsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+  end
+
+  private
+
+  def move_to_top
+    redirect_to root_path unless user_signed_in?
   end
 end
