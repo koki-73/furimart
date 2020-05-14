@@ -2,7 +2,7 @@
   .items-box
     = link_to item_path(item.id) do
       .items-box__photo
-        = image_tag item.item_images[0].image.url
+        = image_tag item.item_images[0].image.url, height: '220px', width: '220px'
       .items-box__body
         %h3.items-name
           = item.name

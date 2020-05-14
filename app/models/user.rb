@@ -23,6 +23,7 @@ class User < ApplicationRecord
   has_many :user_rates
   has_one :profile, dependent: :destroy
   has_one :credit_card, dependent: :destroy
+  # accepts_nested_attributes_for :profile
 
   def already_liked?(item)
     likes.exists?(item_id: item.id)

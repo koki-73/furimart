@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   
   before_action :set_item, only: [:edit, :update]
+  before_action :move_to_index, only: [:edit]
+  before_action :move_to_index_second, only: [:new, :create]
+
+
   
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
@@ -51,7 +55,6 @@ class ItemsController < ApplicationController
 
   def update
     @item_images = ItemImage.where(item_id: @item.id)
-
     image_form_count = item_params_update[:item_images_attributes].to_hash.length
     image_count = @item_images.length
     delete_image_count = 0
@@ -101,6 +104,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :item_explanation, :status, :brand, :delivery_fee, :delivery_method, :delivery_from_location, :preparation_day, :price, item_images_attributes: [:image]).merge(user_id: current_user.id).merge(category_id)
   end
 
+
   def item_params_update
     category_id = params.permit(:category_id)
     params.require(:item).permit(:name, :price, :item_explanation, :status, :brand, :delivery_fee, :delivery_method, :delivery_from_location, :preparation_day, :price, item_images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id).merge(category_id)
@@ -110,4 +114,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def move_to_index
+    redirect_to root_path unless user_signed_in? && @item.user_id == current_user.id
+  end
+
+  def move_to_index_second
+    redirect_to root_path unless user_signed_in?
+  end
 end
+

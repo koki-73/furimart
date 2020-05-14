@@ -1,13 +1,13 @@
-.header{
+.header {
   height: 120px;
   width: 100vw;
   background-color: white;
   border-bottom: solid 1px rgb(170, 169, 169);
-  &__content{
+  &__content {
     max-width: 1040px;
     margin: 0 auto;
     padding: 0 60px;
-    &__menu{
+    &__menu {
       display: flex;
       padding-top: 15px;
       &__title{
@@ -15,19 +15,19 @@
         text-decoration: none;
         margin-right: 45px;
       }
-      &__search_form{
+      &__search-form {
         width: 100%;
-        .input_box{
+        .input-box {
           display: flex;
           width: 100%;
           position: relative;
-          &__form{
+          &__form {
             height: 40px;
             width: 100%;
             font-size: 15px;
             padding-left: 5px;
           }
-          .search_btn{
+          .search-btn {
             width: 36px;
             height: 40px;
             border: 0;
@@ -38,67 +38,55 @@
         }
       }
     }
-    &__bottom{
-      margin-top: 10px;
+    &__bottom {
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
-      .left_lists{
+      .left-lists {
         display: flex;
-        margin-top: 10px;
-        .category_title{
+        &__category, &__brands {
+          position: relative;
+        }
+        img {
+          display: inline-block;
+          position: absolute;
+          top: 3px;
+        }
+        .category-title, .brand-title {
           text-decoration: none;
           font-size: 14px;
           color: black;
           margin-right: 10px;
-          padding-bottom: 3px;
-        }
-        .brand_title{
-          text-decoration: none;
-          font-size: 14px;
-          color: black;
-        }
-        
-      }
-      .right_lists{
-        .user_btn{
-          .sign_up_btn{
-            display       : inline-block;
-            font-size     : 12pt;
-            text-align    : center;
-            cursor        : pointer;
-            padding       : 12px 12px;
-            background    : #ff0000;
-            color         : #ffffff;
-            line-height   : 1em;
-            transition    : .3s; 
-            text-decoration: none;
+          margin-left: 25px;
+          a {
+            display: inline-block;
+            
           }
-          .login_btn{
-            display       : inline-block;
-            border-radius : 5%;
-            font-size     : 12pt;
-            text-align    : center;
-            cursor        : pointer;
-            padding       : 12px 12px;
-            background    : #ffffff;
-            color         : #00ffff;
-            line-height   : 1em;
-            transition    : .3s;
+        }
+      }
+      .right-lists {
+        .user-btn {
+          a {
+            display: inline-block;
+            font-size: 12pt;
+            text-align: center;
+            cursor: pointer;
+            color: #333;
             text-decoration: none;
-            border: solid 1px #00ffff;
+            margin-left: 15px;
           }
         }
       }
     }
   }
 }
-.category-box{
+.category-box {
   z-index: 3;
   width: 200px;
   background-color: white;
   display: none;
-  &__category-parent{
-    &__link{
+  &__category-parent {
+    &__link {
       text-decoration: none;
       color: black;
       font-size: 12px;
@@ -109,68 +97,68 @@
     }
   }
 }
-#category-parent-1{
-  :hover{
+#category-parent-1 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-2{
-  :hover{
+#category-parent-2 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-3{
-  :hover{
+#category-parent-3 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-4{
-  :hover{
+#category-parent-4 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-5{
-  :hover{
+#category-parent-5 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-6{
-  :hover{
+#category-parent-6 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-7{
-  :hover{
+#category-parent-7 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-8{
-  :hover{
+#category-parent-8 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-9{
-  :hover{
+#category-parent-9 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-10{
-  :hover{
+#category-parent-10 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-11{
-  :hover{
+#category-parent-11 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-12{
-  :hover{
+#category-parent-12 {
+  :hover {
     background-color: #3CCACE;
   }
 }
-#category-parent-13{
-  :hover{
+#category-parent-13 {
+  :hover {
     background-color: #3CCACE;
   }
 }

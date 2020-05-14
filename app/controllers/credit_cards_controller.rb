@@ -3,6 +3,7 @@ class CreditCardsController < ApplicationController
   require "payjp"
 
   def new
+    @user = current_user
     card = CreditCard.where(user_id: current_user.id)
     redirect_to action: "index" if card.exists?
   end
@@ -40,6 +41,7 @@ class CreditCardsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @card = CreditCard.find_by(user_id: current_user.id)
     if @card.blank?
       @card = nil 

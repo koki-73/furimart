@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
+
   resources :items do
     resources :comments, only: :create
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    resources :purchases, only: [:index, :show] do
+      collection do
+        put 'pay', to: 'purchases#pay'
+      end
     end
   end
   resources :likes, only: [:index, :create, :destroy]
@@ -20,5 +26,5 @@ Rails.application.routes.draw do
       get 'show', to: 'credit_cards#show'
     end
   end
-  resources :purchases, only: [:new, :create]
+  resources :profiles, only: [:new, :create, :edit, :update]
 end

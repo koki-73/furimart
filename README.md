@@ -55,7 +55,7 @@ Things you may want to cover:
 |prefecture|string|null: false|
 |city|string|null: false|
 |address|string|null: false|
-|bullding|string| |
+|building|string| |
 |image|string| |
 |user_id|reference|null: false|
 |introduce|text| |

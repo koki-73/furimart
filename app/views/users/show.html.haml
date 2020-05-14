@@ -1,7 +1,7 @@
 .users-details
   .users-detail-profile-box
     .users-detail-photo-box
-      = link_to "#" do
+      = link_to user_path(@user.id) do
         .users-detail-photo
           = image_tag('member_photo_noimage_thumb.png', height: '180px', width: '180px')
         %h2
@@ -9,10 +9,10 @@
     .users-score
       %span
         - rates = UserRate.where(user_id: @user.id).length
-        = "評価#{rates}"
+        = "評価 #{rates}"
       %span
         - user_items = Item.where(user_id: @user.id).length
-        = "出品数#{user_items}"
+        = "出品数 #{user_items}"
   .users-rate-area
     .users-rate-area__good
       = icon('fas', 'laugh', class: "good-icon")
@@ -30,7 +30,7 @@
         - bad_rates = UserRate.where(user_id: @user.id, rate: "bad").length
         = "#{bad_rates}"
   .users-self-introduce-area
-    = "#{Profile.find_by(user_id: @user.id).introduction}"
+    = "#{Profile.find_by(user_id: @user.id)&.introduction}"
   .social-media-box
     = link_to "#", class: "facebook" do
       = icon('fab', 'facebook-square', class: "facebook-icon")
@@ -41,9 +41,12 @@
   .items-box-container
     %h2.items-box-head
       この出品者の商品
-    .items-box-content
-      = render partial: 'item', collection: @items
+    - if @items.present?
+      .items-box-content
+        = render partial: 'item', collection: @items
+    - else
+      %h2.no-items-msg 出品した商品はありません
 
-  = link_to "#", class: "sell-btn" do
+  = link_to new_item_path, class: "sell-btn" do
     %div 出品する
     = image_tag "icon_camera.png", size: "54x54", class: "camera-icon"
