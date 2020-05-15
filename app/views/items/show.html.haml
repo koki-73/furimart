@@ -115,29 +115,29 @@
             = link_to "商品の編集", edit_item_path, class: "edit__btn"
             = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "delete__btn"
       .item__show__main__content__comment
-        .comment__content
-          .comment__list
-            - @comments.each do |comment| 
-              .comment__list__content
-                .comment__list__content__user
-                  = link_to user_path(comment.user_id), class: "user__nickname" do
-                    = comment.user.nickname
-                  = link_to user_path(comment.user_id) do
-                    = image_tag "member_photo_noimage_thumb.png", class: "user__image"
-                .comment__list__content__message
-                  = simple_format(comment.content)
-                  .comment__list__content__message__icons
-                    %i.far.fa-clock
-                    = time_ago_in_words(comment.created_at)
-                    %p 前
-          - if user_signed_in?
+        .comment__list
+          - @comments.each do |comment| 
+            .comment__list__content
+              .comment__list__content__user
+                = link_to user_path(comment.user_id), class: "user__nickname" do
+                  = comment.user.nickname
+                = link_to user_path(comment.user_id) do
+                  = image_tag "member_photo_noimage_thumb.png", class: "user__image"
+              .comment__list__content__message
+                = simple_format(comment.content)
+                .comment__list__content__message__icons
+                  %i.far.fa-clock
+                  = time_ago_in_words(comment.created_at)
+                  %p 前
+        - if user_signed_in?
+          .comment__form
             = form_with(model: [@item, @comment], local: "true") do |f|
-              =f.text_area :content, class: "textarea"
-              %p.noticeMsg 
+              =f.text_area :content, class: "text__area"
+              %p.notice__msg 
                 相手のことを考え丁寧なコメントを心がけましょう。
                 %br
                 不快な言葉遣いなどは利用制限や退会処分となることがあります
-              = f.button type: "subnit", class: "commentBtn" do
+              = f.button class: "comment__btn" do
                 %i.fa.fa-comment コメントする
       .item__show__main__relatedeItems
         = link_to "#" do
