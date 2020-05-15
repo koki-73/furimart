@@ -122,7 +122,10 @@
                 = link_to user_path(comment.user_id), class: "user__nickname" do
                   = comment.user.nickname
                 = link_to user_path(comment.user_id) do
-                  = image_tag "member_photo_noimage_thumb.png", class: "user__image"
+                  - if comment.user.profile&.image.blank?
+                    = image_tag "member_photo_noimage_thumb.png", class: "user__image"
+                  - else
+                    = image_tag "#{comment.user.profile.image.url}", class: "user__image"
               .comment__list__content__message
                 = simple_format(comment.content)
                 .comment__list__content__message__icons
