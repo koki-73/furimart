@@ -1,0 +1,62 @@
+%section.mypage-tab-items
+  %h2.mypage-tab-head
+    購入した商品
+  %ul.mypage-tabs
+    %li.active
+      %h3
+        = link_to "取引中", "#"
+    %li
+      %h3
+        = link_to "過去の取引", "#"
+  .tab-content
+    %ul#mypage-tab.items.ongoing.active
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+          .mypage-item-body
+            .message-item
+              = "テストさんからコメントがあります"
+            .message-time-before
+              = icon('far', 'clock', class: "clock-icon")
+              %span 1時間前
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+          .mypage-item-body
+            .message-item
+              = "テストさんからコメントがあります"
+            .message-time-before
+              = icon('far', 'clock', class: "clock-icon")
+              %span 1時間前
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li.mypage-go-list
+        = link_to "一覧を見る", "#"
+
+    %ul#mypage-tab.items.done
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+          .mypage-item-body
+            .message-item
+              = "取引が完了しました"
+            .message-time-before
+              = icon('far', 'clock', class: "clock-icon")
+              %span 1時間前
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png',  height: '30px', width: '30px', class: "list-icon")
+          .mypage-item-body
+            .message-item
+              = "取引が完了しました"
+            .message-time-before
+              = icon('far', 'clock', class: "clock-icon")
+              %span 1時間前
+          = icon('fas', 'chevron-right', class: "arrow-icon")
+      %li.mypage-go-list
+        = link_to "一覧を見る", "#"
