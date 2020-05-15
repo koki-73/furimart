@@ -83,6 +83,7 @@ class ItemsController < ApplicationController
     @category_parent = @category_child.parent
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
+    @like = Like.new
   end
 
   def destroy

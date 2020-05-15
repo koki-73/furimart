@@ -18,10 +18,14 @@ class User < ApplicationRecord
   
   has_many :comments, dependent: :destroy
   has_many :items, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :liked_items, through: :likes, source: :item
   has_many :user_rates
   has_one :profile, dependent: :destroy
   has_one :credit_card, dependent: :destroy
   # accepts_nested_attributes_for :profile
 
+  def already_liked?(item)
+    likes.exists?(item_id: item.id)
+  end
 end

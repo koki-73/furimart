@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
 
   # before_action :set_categories
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue404
+
+  def rescue404
+    render template: 'errors/not_found', status: 404
+  end
+
 
 
   protect_from_forgery with: :exception
@@ -25,6 +31,4 @@ class ApplicationController < ActionController::Base
   def production?
     Rails.env.production?
   end
-
-
 end
