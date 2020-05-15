@@ -95,7 +95,11 @@ ul.mypage-tabs {
     border-top: 2px solid #ea352d;
   }
 }
-ul.mypage-tab-notification.tab-pane.active {
+ul#mypage-tab {
+  display: none;
+}
+ul#mypage-tab.active {
+  display: block;
   li {
     a {
       display: block;
@@ -140,6 +144,7 @@ ul.mypage-tab-notification.tab-pane.active {
     }
   }
 }
+
 .mypage-side-bar {
   nav.mypage-nav {
     ul.mypage-nav-list {
