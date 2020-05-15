@@ -5,8 +5,6 @@ $(function(){
                   </div>`;
     return html;
   }
-
-  // $("#profile-image-preview").attr("for",`profile[image]`);
   
   $("#profile-image-form").on("change", function(e){
     console.log("OK")
