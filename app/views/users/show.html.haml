@@ -3,7 +3,10 @@
     .users-detail-photo-box
       = link_to user_path(@user.id) do
         .users-detail-photo
-          = image_tag('member_photo_noimage_thumb.png', height: '180px', width: '180px')
+          - if @profile&.image.blank?
+            = image_tag('member_photo_noimage_thumb.png', height: '180px', width: '180px')
+          - else
+            = image_tag "#{@profile.image.url}", class: "profile-image", height: '180px', width: '180px'
         %h2
           = @user.nickname
     .users-score

@@ -3,6 +3,17 @@
     %h2 プロフィール情報
     = form_with(model: @profile, local: true, class: "profile-form") do |f|
       .form-content
+        = f.label :プロフィール画像
+        %span.form-content__option 任意
+        %label#profile-image
+          #profile-image-preview
+            - if @profile.image.blank?
+              = image_tag('member_photo_noimage_thumb.png', height: '60px', width: '60px', class: "profile-image")
+            - else
+              = image_tag "#{@profile.image.url}", class: "profile-image"
+            = f.file_field :image, id: "profile-image-form"
+
+      .form-content
         = f.label :郵便番号
         %span.form-content__require 必須
         = f.text_field :post_code, placeholder: "例）1500002"

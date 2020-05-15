@@ -11,8 +11,10 @@
     background-size: cover;
     .users-detail-photo-box {
       .users-detail-photo {
-        border-radius: 50%;
         margin: 0 auto;
+        img {
+          border-radius: 50%;
+        }
       }
       a {
         text-decoration: none;

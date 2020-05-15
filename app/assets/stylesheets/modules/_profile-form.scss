@@ -46,6 +46,22 @@
         margin: 0 auto;
         margin-bottom: 24px;
       }
+      #profile-image-preview {
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+        border-radius: 50%;
+        text-align: center;
+        margin-top: 20px;
+        img.profile-image {
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+        }
+        #profile-image-form {
+          display: none;
+        }
+      }
       ul.icon-list {
         display: flex;
         margin-top: 8px;

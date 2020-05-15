@@ -3,7 +3,10 @@
     %section.mypage-user-icon
       = link_to my_pages_path do
         .mypage-user-photo
-          = image_tag('member_photo_noimage_thumb.png',  height: '60px', width: '60px')
+          - if @profile&.image.blank?
+            = image_tag('member_photo_noimage_thumb.png', height: '60px', width: '60px')
+          - else
+            = image_tag "#{@profile.image.url}", class: "profile-image", height: '60px', width: '60px'
         %h2.user-name
           = @user.nickname
         .mypage-score
