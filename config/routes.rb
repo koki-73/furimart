@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles, only: [:new, :create, :edit, :update]
-  get '*unmatched_route', to: 'application#rescue404'
+  get '*path', controller: 'application', action: 'render_404'
+  get '*path', controller: 'application', action: 'render_500'
 end
