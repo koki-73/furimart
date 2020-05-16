@@ -55,6 +55,9 @@
     }
     .mypage-user-photo {
       margin: 0 auto;
+      img {
+        border-radius: 50%;
+      }
     }
     span {
       margin-right: 10px;

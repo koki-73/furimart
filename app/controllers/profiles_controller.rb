@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:post_code, :tel_number, :prefecture_id, :city, :address, :building, :image, :introduction).merge(user_id: current_user.id)
+    params.require(:profile).permit(:image, :post_code, :tel_number, :prefecture_id, :city, :address, :building, :image, :introduction).merge(user_id: current_user.id)
   end
 
   def move_to_index

@@ -11,4 +11,5 @@ class Profile < ApplicationRecord
     validates :address
   end
 
+  mount_uploader :image, ImageUploader
 end
