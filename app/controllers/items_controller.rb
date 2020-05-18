@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update]
   before_action :move_to_index, only: [:edit]
   before_action :move_to_index_second, only: [:new, :create]
-
-
   
   def get_category_children
     @category_children = Category.find(params[:parent_id]).children
@@ -13,10 +11,6 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     child_id = child_params[:child_id]
     @category_grandchildren = Category.find(child_id).children 
-  end
-  
-  def set_images
-    @images = ItemImage.where(item_id: params[:id])
   end
 
   def index
@@ -94,7 +88,9 @@ class ItemsController < ApplicationController
       render "show"
     end
   end
+
   private
+
   def child_params
     params.permit(:child_id)
   end
@@ -103,7 +99,6 @@ class ItemsController < ApplicationController
     category_id = params.permit(:category_id)
     params.require(:item).permit(:name, :price, :item_explanation, :status, :brand, :delivery_fee, :delivery_method, :delivery_from_location, :preparation_day, :price, item_images_attributes: [:image]).merge(user_id: current_user.id).merge(category_id)
   end
-
 
   def item_params_update
     category_id = params.permit(:category_id)

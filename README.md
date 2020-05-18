@@ -50,9 +50,9 @@ Things you may want to cover:
 ## profiles table
 |Column|Type|Options|
 |------|----|-------|
-|post_code|integer|null: false|
+|post_code|string|null: false|
 |tel_number|string| |
-|prefecture|string|null: false|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |address|string|null: false|
 |building|string| |
@@ -84,14 +84,13 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-
 ## items table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
 |status|integer|null: false|
-|brand_id|reference|fk true|
+|brand|string| |
 |buyer_id|reference|fk true|
 |delivery_fee|integer|null: false|
 |category_id|reference|null: false|
@@ -107,10 +106,15 @@ Things you may want to cover:
 - has_many :likes
 - has_many :item_images, dependent: :destroy
 - has_many :user_rates
+- belongs_to :user
 - belongs_to :category
 - belongs_to :size
-- belongs_to :brand
 - belongs_to :buyer, class_name: "User"
+- belongs_to_active_hash :item_status
+- belongs_to_active_hash :item_delivery_fee
+- belongs_to_active_hash :item_delivery_method
+- belongs_to_active_hash :item_prefecture
+- belongs_to_active_hash :item_preparation_day
 
 ## likes table
 |Column|Type|Options|
@@ -137,15 +141,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestry|
-
-### Association
-- has_many :items
-
-## brands table
-|Column|Type|Options|
-|------|----|-------|
-|name|string| |
+|ancestry|string| |
 
 ### Association
 - has_many :items
@@ -163,7 +159,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |size|string|null: false|
-
 
 ### Association
 - has_many :items

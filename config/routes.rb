@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :purchases, only: [:index, :show] do
+    resources :purchases, only: :index do
       collection do
         put 'pay', to: 'purchases#pay'
       end
@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles, only: [:new, :create, :edit, :update]
-  get '*unmatched_route', to: 'application#rescue404'
+  get '*path', controller: 'application', action: 'render_404'
+  get '*path', controller: 'application', action: 'render_500'
 end
